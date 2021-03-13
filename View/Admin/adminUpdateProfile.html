@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to FundBD</title>
+  <title>FundBD | Update Profile</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
 </head>
 <body>
@@ -22,10 +22,10 @@
       <table align="center">
         <tr>
           <td>
-            <a href="./index.html">Home</a>
-            <a href="./loginType.html">Login</a>
-            <a href="./regType.html">Registration</a>
-            <a href="./aboutUS.html">About Us</a>
+            <a href="./dashBoard.html">Dashboard</a>&nbsp;
+            <a href="./adminProfile.html">Profile</a>&nbsp;
+            <a href="./notification.html">Notification</a>&nbsp;
+            <a href="#">Logout</a>
           </td>
         </tr>
       </table>
@@ -37,65 +37,80 @@
 
     <!-- .................................Main Content..................... -->
     <fieldset>
-      <h3>Account</h3>
-      <hr>
-      <ul>
-        <li><a href="./dashBoard.html">Dashboard</a></li>
-        <li><a href="./adminProfile.html">Profile</a></li>
-        <li><a href="./adminUpdateProfile.html">Edit Profile</a></li>
-        <li><a href="profilePicture.html">Change Profile Picture</a></li>
-        <li><a href="./adminChangePassword.html">Change Password</a></li>
-        <li><a href="../index.html">Logout</a></li>
-      </ul>
+      <table align="center" width="1000">
+        <tr>
+          <td>
+            <h3>Account</h3>
+            <hr>
+            <ul>
+              <li><a href="./dashBoard.html">Dashboard</a></li>
+              <li><a href="./adminProfile.html">View Profile</a></li>
+              <li><a href="./adminUpdateProfile.html">Edit Profile</a></li>
+              <li><a href="#">Change Profile Picture</a></li>
+              <li><a href="./adminChangePassword.html">Change Password</a></li>
+              <li><a href="./donateToApplicant.html">Donate</a></li>
+              <li><a href="./employeeList.html">Employee List</a></li>
+              <li><a href="./applicantList.html">Applicant List</a></li>
+              <li><a href="./donnerList.html">Donner List</a></li>
+              <li><a href="./transctionDetails.html">Transaction Details</a></li>
+              <li><a href="./postNotice.html">Post A Notice</a></li>
+            </ul>
+          </td>
+          <td>
+            
+              <form action="" method="post">
+                  <fieldset>
+                    <legend>Edit Profile</legend>
+                    
+                    <table>
+                      <tr>
+                        <td>Name &nbsp;&nbsp;</td>
+                        <td>:<input type="text" id="name" name="name" ></td>
+                      </tr>
+                    </table>
+                    <hr>
+                    <table>
+                      <tr>
+                        <td>Email &nbsp;&nbsp;</td>
+                        <td>:<input type="text" id="email" name="email" ></td>
+                      </tr>
+                    </table>
+                    <hr>
+                    <table>
+                      <tr>
+                        <td>Gender &nbsp;&nbsp;</td>
+                        <td>:<input type="radio" name="gender" value="Male">
+                          <label class="male">Male</label>
+                      
+                          <input type="radio" name="gender" value="Female">
+                          <label class="female">Female</label>
+                      
+                          <input type="radio" name="gender" value="Other">
+                          <label class="other">Other</label></td>
+                      </tr>
+                    </table>
+                    <hr>
+                    <table>
+                      <tr>
+                        <td>Date of Birth &nbsp;&nbsp;</td>
+                        <td>:<input type="text" id="date" name="date" size="5"> /
+                          <input type="text" id="month" name="month" size="5"> /
+                          <input type="text" id="year" name="year" size="6"><i> (dd/mm/yyyy)</i></td>
+                      </tr>
+                    </table>
+                    <hr>
+                    <button type="submit">Submit</button>
+                  
+                  </fieldset>
+              </form>
+            
+          </td>
+        </tr>
+      </table>
+     
     </fieldset>
     
-    <fieldset>
-      <form action="" method="post">
-          <fieldset>
-            <legend>Edit Profile</legend>
-            
-            <table>
-              <tr>
-                <td>Name &nbsp;&nbsp;</td>
-                <td>:<input type="text" id="name" name="name" ></td>
-              </tr>
-            </table>
-            <hr>
-            <table>
-              <tr>
-                <td>Email &nbsp;&nbsp;</td>
-                <td>:<input type="text" id="email" name="email" ></td>
-              </tr>
-            </table>
-            <hr>
-            <table>
-              <tr>
-                <td>Gender &nbsp;&nbsp;</td>
-                <td>:<input type="radio" name="gender" value="Male">
-                  <label class="male">Male</label>
-              
-                  <input type="radio" name="gender" value="Female">
-                  <label class="female">Female</label>
-              
-                  <input type="radio" name="gender" value="Other">
-                  <label class="other">Other</label></td>
-              </tr>
-            </table>
-            <hr>
-            <table>
-              <tr>
-                <td>Date of Birth &nbsp;&nbsp;</td>
-                <td>:<input type="text" id="date" name="date" size="5"> /
-                  <input type="text" id="month" name="month" size="5"> /
-                  <input type="text" id="year" name="year" size="6"><i> (dd/mm/yyyy)</i></td>
-              </tr>
-            </table>
-            <hr>
-            <button type="submit">Submit</button>
-          
-          </fieldset>
-      </form>
-    </fieldset>
+    
     <!-- .................................Main Content..................... -->
     <!-- .................................Footer Start..................... -->
     <fieldset>

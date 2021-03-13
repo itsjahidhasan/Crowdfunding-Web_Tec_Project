@@ -11,7 +11,7 @@ if(isset( $_POST['submit'])){
     }
     if($type == "Employee"){
       
-      header('location: ../View/Admin/adminLogin.html');
+      header('location: ../View/Employee/employeeLogin.html');
      
     }
     if($type == "Donner"){
@@ -21,12 +21,10 @@ if(isset( $_POST['submit'])){
     }
     if($type == "Applicant"){
       
-      header('location: ../View/Admin/adminLogin.html');
+      header('location: ../View/Applicant/applicantLogin.html');
      
     }
-    else{
-      echo "You need select a option";
-    }
+    
 
     
   }
