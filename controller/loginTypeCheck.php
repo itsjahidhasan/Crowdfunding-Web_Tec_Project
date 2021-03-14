@@ -16,7 +16,7 @@ if(isset( $_POST['submit'])){
     }
     if($type == "Donner"){
       
-      header('location: ../View/Admin/adminLogin.html');
+      header('location: ../View/Donner/donnerLogin.html');
      
     }
     if($type == "Applicant"){

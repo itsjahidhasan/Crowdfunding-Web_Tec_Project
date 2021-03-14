@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- .................................Header Start..................... --> 
-  <form action="" >
+  
     <fieldset>
       <table align="center">
         <tr>
@@ -39,20 +39,20 @@
     <fieldset>
 
       
-        <form action="" method="post">
+        <form action="../controller/regTypeCheck.php" method="post">
           <fieldset>
             <legend>Registration as</legend>
             <br>
             
-            <input type="radio" name="loginType" value="Employee">
+            <input type="radio" name="regType" value="Employee">
             <label class="Employee">Employee</label>
-            <input type="radio" name="loginType" value="Donner">
+            <input type="radio" name="regType" value="Donner">
             <label class="Donner">Donner</label>
-            <input type="radio" name="loginType" value="Applicant">
+            <input type="radio" name="regType" value="Applicant">
             <label class="Applicant">Applicant</label>
             <br>
             <br>
-            <input type="submit" value="Go">
+            <input type="submit" name="submit" value="Go">
           
           </fieldset>
         </form>
@@ -66,7 +66,7 @@
       <p align="center">copyright	&#169;2021</p>
     </fieldset>
     <!-- .................................Footer Close..................... -->
-  </form>
+  
 
 </body>
 </html>
