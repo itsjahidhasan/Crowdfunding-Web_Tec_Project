@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>FundBD |Crowdfunding</title>
-  <link rel="shortcut icon" href="./assets/icon.png">
+  <link rel="shortcut icon" href="../../assets/icon.png">
 </head>
 <body>
   <!-- ...............................Header Start....................... -->
@@ -15,17 +15,17 @@
       <table align="center">
         <tr>
           <td>
-            <img src="./assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">          </td>
+            <img src="../../assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">          </td>
           
         </tr>
       </table>
       <table align="center">
         <tr>
           <td>
-            <a href="./index.html">Home</a>
-            <a href="./loginType.html">Login</a>
-            <a href="./regType.html">Registration</a>
-            <a href="http://">About Us</a>
+            <a href="./employeeDashboard.html">Dashboard</a>&nbsp;
+            <a href="./employeeProfile.php">Profile</a>&nbsp;
+            <a href="./notification.html">Notification</a>&nbsp;
+            <a href="#">Logout</a>
           </td>
         </tr>
       </table>
@@ -33,42 +33,42 @@
     <!-- .................................Header Close..................... -->
     <!-- .................................Main Content..................... -->
     <fieldset>
-    <form method="post" action="../../controller/Employee/employeeResignRequest.php"> 
-      <fieldset>
-        <legend><b>Employee Resign</b></legend>
-        
-          <table align="center">
-            <tr>
-                <td>Cause For Resign:<input type="text" name="cresign"></td>
+      <form method="post" action="../../controller/Employee/employeeResignRequest.php"> 
+        <fieldset>
+          <legend><b>Employee Resign</b></legend>
+          
+            <table align="center">
+              <tr>
+                  <td>Cause For Resign:<input type="text" name="cresign"></td>
+              </tr>
+              <tr>
+                <td>Application:<input type="text" name="application"></td>
             </tr>
             <tr>
-              <td>Application:<input type="text" name="application"></td>
+              <td>Email:<input type="text" name="email"></td>
           </tr>
-          <tr>
-            <td>Email:<input type="text" name="email"></td>
-        </tr>
-            
-          </table>	
-            <hr>
-            <table align="center">
               
-              <tr>
-                <td>
-                  <input type="submit" name="submit" value="Submit">
-                </td>
-      
-                <td>
-                  <input type="reset" name="reset" id="reset" value="Reset">
-                </td>
+            </table>	
+              <hr>
+              <table align="center">
                 
-              </tr>
-            
-                
-            </table>  
-      </fieldset>
-    </form>
-  </fieldset>
-  
+                <tr>
+                  <td>
+                    <input type="submit" name="submit" value="Submit">
+                  </td>
+        
+                  <td>
+                    <input type="reset" name="reset" id="reset" value="Reset">
+                  </td>
+                  
+                </tr>
+              
+                  
+              </table>  
+        </fieldset>
+      </form>
+    </fieldset>
+    
     <!-- .................................Main Content..................... -->
     <!-- .................................Footer Start..................... -->
     <fieldset>

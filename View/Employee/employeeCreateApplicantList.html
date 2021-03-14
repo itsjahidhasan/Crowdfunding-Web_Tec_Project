@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>FundBD |Crowdfunding</title>
-  <link rel="shortcut icon" href="./assets/icon.png">
+  <link rel="shortcut icon" href="../../assets/icon.png">
 </head>
 <body>
     <!-- .................................Header Start..................... --> 
@@ -15,17 +15,17 @@
       <table align="center">
         <tr>
           <td>
-            <img src="./assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">          </td>
+            <img src="../../assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">          </td>
           
         </tr>
       </table>
       <table align="center">
         <tr>
           <td>
-            <a href="./index.html">Home</a>
-            <a href="./loginType.html">Login</a>
-            <a href="./regType.html">Registration</a>
-            <a href="http://">About Us</a>
+            <a href="./employeeDashboard.html">Dashboard</a>&nbsp;
+            <a href="./employeeProfile.php">Profile</a>&nbsp;
+            <a href="./notification.html">Notification</a>&nbsp;
+            <a href="#">Logout</a>
           </td>
         </tr>
       </table>
@@ -35,49 +35,48 @@
 
 
           <!-- .................................Main Content..................... -->
-    <fieldset>
-  <form method="post" action="../../controller/Employee/employeeCreateApplicantList.php" >
-    <fieldset>
-    
-        <legend><b>Employee Create Applicant List</b></legend><br>
-    
-      
-        <label>Name : </label>
-        <input type="text" id="name" name="name" ><br>
-        <hr><br>
-
-        <label>User Name : </label>
-        <input type="text" id="uname" name="uname" ><br>
-        <hr><br>
-        
-        <label>Email :</label>
-        <input type="text" id="email" name="email" ><br>
-        <hr><br>
-    
-        
-    
-    <fieldset>
-    
-    <legend>Date Of Birth</legend>
-    
-    
-    
-    <input type="text" id="date" name="date" size="5"> /
-    <input type="text" id="month" name="month" size="5"> /
-    <input type="text" id="year" name="year" size="6"><i> (dd/mm/yyyy)</i>
-    
-    
-    </fieldset>
-    
-        <hr>
-    
-        <input type="submit" name="submit" id="submit" value="Create">
-        
-        <input type="reset" name="reset" id="reset" value="Reset"><br><br>
-    </fieldset>
-    </form>
-</fieldset>
-<fieldset>
+          <fieldset>
+            <form method="post" action="../../controller/Employee/employeeCreateApplicantList.php" >
+              <fieldset>
+              
+                  <legend><b>Employee Create Applicant List</b></legend><br>
+              
+                
+                  <label>Name : </label>
+                  <input type="text" id="name" name="name" ><br>
+                  <hr><br>
+          
+                  <label>User Name : </label>
+                  <input type="text" id="uname" name="uname" ><br>
+                  <hr><br>
+                  
+                  <label>Email :</label>
+                  <input type="text" id="email" name="email" ><br>
+                  <hr><br>
+              
+                  
+              
+              <fieldset>
+              
+              <legend>Date Of Birth</legend>
+              
+              
+              
+              <input type="text" id="date" name="date" size="5"> /
+              <input type="text" id="month" name="month" size="5"> /
+              <input type="text" id="year" name="year" size="6"><i> (dd/mm/yyyy)</i>
+              
+              
+              </fieldset>
+              
+                  <hr>
+              
+                  <input type="submit" name="submit" id="submit" value="Create">
+                  
+                  <input type="reset" name="reset" id="reset" value="Reset"><br><br>
+              </fieldset>
+              </form>
+          </fieldset>
     <!-- .................................Main Content..................... -->
 
     <!-- .................................Footer Start..................... -->
