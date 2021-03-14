@@ -37,7 +37,7 @@
           <a href="./applicantDashboard.html">Dashboard</a>&nbsp;
           <a href="./applicantProfile.php">Profile</a>&nbsp;
           <a href="./notification.html">Notification</a>&nbsp;
-          <a href="#">Logout</a>
+          <a href="../../controller/logout.php">Logout</a>
         </td>
       </tr>
     </table>
