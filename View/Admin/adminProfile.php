@@ -1,3 +1,15 @@
+<?php
+    session_start();
+    $jsonFile= fopen("../../Model/Admin/adminData.json","r");
+    $jsonRead= fread($jsonFile,filesize("../../Model/Admin/adminData.json"));
+    $userValue = json_decode($jsonRead, true);
+    $name = $userValue ['name'];
+		$email = $userValue ['email'];
+		$gender = $userValue ['gender'];
+    $dob = $userValue ['dateOfBarth'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +35,7 @@
         <tr>
           <td>
             <a href="./dashBoard.html">Dashboard</a>&nbsp;
-            <a href="./adminProfile.html">Profile</a>&nbsp;
+            <a href="./adminProfile.php">Profile</a>&nbsp;
             <a href="./notification.html">Notification</a>&nbsp;
             <a href="#">Logout</a>
           </td>
@@ -44,7 +56,7 @@
             <hr>
             <ul>
               <li><a href="./dashBoard.html">Dashboard</a></li>
-              <li><a href="./adminProfile.html">View Profile</a></li>
+              <li><a href="./adminProfile.php">View Profile</a></li>
               <li><a href="./adminUpdateProfile.html">Edit Profile</a></li>
               <li><a href="#">Change Profile Picture</a></li>
               <li><a href="./adminChangePassword.html">Change Password</a></li>
@@ -64,28 +76,28 @@
               <table>
                 <tr>
                   <td>Name &nbsp;&nbsp;</td>
-                  <td>:</td>
+                  <td>:<?php echo $name?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Email &nbsp;&nbsp;</td>
-                  <td>:</td>
+                  <td>:<?php echo $email?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Gender &nbsp;&nbsp;</td>
-                  <td>:</td>
+                  <td>:<?php echo $gender?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Date of Birth &nbsp;&nbsp;</td>
-                  <td>:</td>
+                  <td>:<?php echo $dob?></td>
                 </tr>
               </table>
               <hr>
@@ -104,3 +116,8 @@
     <!-- .................................Footer Close..................... -->
 </body>
 </html>
+
+
+<?php
+   fclose($jsonFile);
+?>
