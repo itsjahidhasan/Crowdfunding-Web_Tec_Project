@@ -1,7 +1,7 @@
 <?php
     session_start();
-    $jsonFile= fopen("../../Model/Admin/adminData.json","r");
-    $jsonRead= fread($jsonFile,filesize("../../Model/Admin/adminData.json"));
+    $jsonFile= fopen("../../Model/Applicant/applicantData.json","r");
+    $jsonRead= fread($jsonFile,filesize("../../Model/Applicant/applicantData.json"));
     $userValue = json_decode($jsonRead, true);
     $name = $userValue ['name'];
 		$email = $userValue ['email'];
