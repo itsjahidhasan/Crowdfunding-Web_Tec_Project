@@ -56,7 +56,7 @@
           <hr>
           <ul>
             <li><a href="./applicantDashboard.html">Dashboard</a></li>
-            <li><a href="./adminProfile.php">View Profile</a></li>
+            <li><a href="./applicantProfile.php">View Profile</a></li>
             <li><a href="./applicantUpdateProfile.html">Edit Profile</a></li>
             <li><a href="#">Change Profile Picture</a></li>
             <li><a href="./applicantChangePassword.html">Change Password</a></li>
