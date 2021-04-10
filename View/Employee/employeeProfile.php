@@ -1,7 +1,7 @@
 <?php
     session_start();
-    $jsonFile= fopen("../../Model/Admin/adminData.json","r");
-    $jsonRead= fread($jsonFile,filesize("../../Model/Admin/adminData.json"));
+    $jsonFile= fopen("../../Model/Employee/employeData.json","r");
+    $jsonRead= fread($jsonFile,filesize("../../Model/Employee/employeeData.json"));
     $userValue = json_decode($jsonRead, true);
     $name = $userValue ['name'];
 		$email = $userValue ['email'];
@@ -56,7 +56,7 @@
           <hr>
           <ul>
             <li><a href="./applicantDashboard.html">Dashboard</a></li>
-            <li><a href="./adminProfile.php">View Profile</a></li>
+            <li><a href="./employeeProfile.php">View Profile</a></li>
             <li><a href="./applicantUpdateProfile.html">Edit Profile</a></li>
             <li><a href="#">Change Profile Picture</a></li>
             <li><a href="./applicantChangePassword.html">Change Password</a></li>
