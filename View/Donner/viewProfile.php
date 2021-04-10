@@ -1,4 +1,14 @@
+<?php
+    session_start();
+    $jsonFile= fopen("../../Model/Donner/donnerData.json","r");
+    $jsonRead= fread($jsonFile,filesize("../../Model/Donner/donnerData.json"));
+    $userValue = json_decode($jsonRead, true);
+    $name = $userValue ['name'];
+		$email = $userValue ['email'];
+		$gender = $userValue ['gender'];
+    $dob = $userValue ['dateOfBarth'];
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +64,7 @@
             <hr>
             <ul>
             <li><a href="./donnerDashboard.html">Dashboard</a></li>
-              <li><a href="./donnerProfile.html">View profile</a></li>
+              <li><a href="./viewProfile.php">View profile</a></li>
               <li><a href="./donnerUpdateProfile.html">Update Profile</a></li>
               <li><a href="#">Change Profile Picture</a></li>
               <li><a href="./donnerChangePassword.html">Change Password</a></li>
@@ -76,28 +86,28 @@
               <table>
                 <tr>
                   <td>Name &nbsp;&nbsp;</td>
-                  <td>:S.M.Shariyer</td>
+                  <td>:<?php echo $name?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Email &nbsp;&nbsp;</td>
-                  <td>:s.m.shariyer04@gmail.com</td>
+                  <td>:<?php echo $email?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Gender &nbsp;&nbsp;</td>
-                  <td>:Male</td>
+                  <td><?php echo $gender?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Date of Birth &nbsp;&nbsp;</td>
-                  <td>:10-10-2000</td>
+                  <td>:<?php echo $dob?></td>
                 </tr>
               </table>
               <hr>
@@ -117,4 +127,6 @@
 </body>
 </html>
 
-
+<?php
+   fclose($jsonFile);
+?>
