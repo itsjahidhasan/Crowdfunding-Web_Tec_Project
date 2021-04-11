@@ -1,10 +1,21 @@
+<?php
+    session_start();
+    $jsonFile= fopen("../../Model/Admin/notice.json","r");
+    $jsonRead= fread($jsonFile,filesize("../../Model/Admin/notice.json"));
+    $adminNotice = json_decode($jsonRead, true);
+    $notice = $adminNotice ['notice'];
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard</title>
+  <title>FundBD | Notification</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
 </head>
 <body>
@@ -37,29 +48,18 @@
 
     <!-- .................................Main Content..................... -->
     <fieldset>
-      <table align="center" width="1000">
-        <tr>
-          <td>
-            <h3>Account</h3>
-            <hr>
-            <ul>
-              <li><a href="./dashBoard.html">Dashboard</a></li>
-              <li><a href="./adminProfile.php">View Profile</a></li>
-              <li><a href="./adminUpdateProfile.html">Edit Profile</a></li>
-              <li><a href="./adminChangePic.html">Change Profile Picture</a></li>
-              <li><a href="./adminChangePassword.html">Change Password</a></li>
-              <li><a href="./donateToApplicant.html">Donate</a></li>
-              <li><a href="./employeeList.html">Employee List</a></li>
-              <li><a href="./applicantList.html">Applicant List</a></li>
-              <li><a href="./donnerList.html">Donner List</a></li>
-              <li><a href="./transctionDetails.html">Transaction Details</a></li>
-              <li><a href="./postNotice.html">Post A Notice</a></li>
-              <li><a href="./notice.php">Updated Notice</a></li>
-
-            </ul>
-          </td>
-        </tr>
-      </table>
+      
+      
+        <fieldset>
+          <legend>Notice uploaded by Admin</legend>
+          <table align="center" width="1000">
+            <tr>
+              <td align="center"><h3><?php echo $notice?></h3></td>
+            </tr>
+          </table>
+        </fieldset>
+      
+        
     </fieldset>
     <!-- .................................Main Content..................... -->
     <!-- .................................Footer Start..................... -->
