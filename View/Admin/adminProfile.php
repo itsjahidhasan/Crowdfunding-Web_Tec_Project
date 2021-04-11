@@ -58,7 +58,7 @@
               <li><a href="./dashBoard.html">Dashboard</a></li>
               <li><a href="./adminProfile.php">View Profile</a></li>
               <li><a href="./adminUpdateProfile.html">Edit Profile</a></li>
-              <li><a href="#">Change Profile Picture</a></li>
+              <li><a href="./adminChangePic.html">Change Profile Picture</a></li>
               <li><a href="./adminChangePassword.html">Change Password</a></li>
               <li><a href="./donateToApplicant.html">Donate</a></li>
               <li><a href="./employeeList.html">Employee List</a></li>
@@ -72,7 +72,7 @@
             <fieldset>
               <legend>Profile</legend>
               <img src="../../assets/user.png" alt="" width="100" height="100"><br>
-              <a href="">Change</a>
+              <a href="./adminChangePic.html">Change</a>
               <table>
                 <tr>
                   <td>Name &nbsp;&nbsp;</td>
