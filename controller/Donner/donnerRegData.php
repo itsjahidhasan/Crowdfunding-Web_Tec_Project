@@ -20,13 +20,36 @@ if ( isset ( $_POST [ 'submit' ] ) ) {
   $dateOfBirth = $day."/".$month."/".$year;
   $yearlyIncome = $_POST['yearlyIncome'];
 
+    if(strlen($_POST['password'])<8)
+    {
+			echo 'Password must not be less than eight (8) characters <a href="../../View/Donner/donnerLogin.html">Go Back</a>';
+		}
 
+    if(strlen($_POST['password'])>=8)
+    {
+      $checkpass = false;
+		  for ($i=0; $i < strlen($_POST['password']); $i++) 
+      { 
+			    if($_POST['password'][$i] === '@' || $_POST['password'][$i] === '#' || $_POST['password'][$i] === '$' || $_POST['password'][$i] === '%')
+		    	{
+				    $checkpass = true;
+			    	break;
+				
+		    	}
+		  }
+      if ($checkpass === false)
+      {
+         echo 'Password must contain at least one of the special characters (@, #, $, %) <a href="../../View/Donner/donnerLogin.html">Go Back</a>';
+
+      }
+
+    }
 
     if ( $name == "" || $email == "" || $userName == "" || $password == "" || $confirmPassword == ""|| $day == "" || $month == "" || $year == "" || $occupation == "" || $address == "") {
- 	echo "Filled all the file... ";
+ 	echo 'field is empty please Fill up the form properly <a href="../../view/Donner/donnerRegistration.html">Reload Registration Form</a> ';
  }
  elseif ( $password != $confirmPassword) {
- 	echo "Password didn't match with confirm Password ";
+ 	echo 'Password did not match <a href="../../view/Donner/donnerRegistration.html">Reload Registration Form</a> ';
  }
  else{
  	$donnerData = [	

@@ -7,7 +7,7 @@
 		}
 		elseif(strlen($_POST['password'])<8)
 		{
-			echo 'Password must not be less than eight (8) characters <a href="../../View/Donner/donnerLogin.html">Go Back</a>';
+			echo 'Password must not be less than eight (8) characters and must  contain spcial character <a href="../../View/Donner/donnerLogin.html">Go Back</a>';
 		}
     if(strlen($_POST["username"])>=2 and strlen($_POST['password'])>=8)
 		{
