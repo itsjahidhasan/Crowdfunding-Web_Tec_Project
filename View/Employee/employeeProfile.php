@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $jsonFile= fopen("../../Model/Employee/employeData.json","r");
+    $jsonFile= fopen("../../Model/Employee/employeeData.json","r");
     $jsonRead= fread($jsonFile,filesize("../../Model/Employee/employeeData.json"));
     $userValue = json_decode($jsonRead, true);
     $name = $userValue ['name'];
@@ -34,8 +34,8 @@
     <table align="center">
       <tr>
         <td>
-          <a href="./applicantDashboard.html">Dashboard</a>&nbsp;
-          <a href="./applicantProfile.php">Profile</a>&nbsp;
+          <a href="./employeeDashboard.html">Dashboard</a>&nbsp;
+          <a href="./employeeProfile.php">Profile</a>&nbsp;
           <a href="./notification.html">Notification</a>&nbsp;
           <a href="../../controller/logout.php">Logout</a>
         </td>
@@ -55,20 +55,21 @@
           <h3>Account</h3>
           <hr>
           <ul>
-            <li><a href="./applicantDashboard.html">Dashboard</a></li>
-            <li><a href="./employeeProfile.php">View Profile</a></li>
-            <li><a href="./applicantUpdateProfile.html">Edit Profile</a></li>
-            <li><a href="#">Change Profile Picture</a></li>
-            <li><a href="./applicantChangePassword.html">Change Password</a></li>
-            <li><a href="./applicantForgotPassword.html">Forgot Password</a></li>
-            <li><a href="./applicantDeleteAccount.html">Delete Account</a></li>
-            <li><a href="./applicantCauseForDonation.html">Donation Reason</a></li>
-            <li><a href="./applicantDonationDetails.html">Donation Details</a></li>
-            <li><a href="./applicantDonationGoal.html">Set Donation Goal</a></li>
-            <li><a href="./applicantEditPost.html">Edit Post</a></li>
-            <li><a href="./applicantGoalCompleteNotice.html">Goal Complete Notice</a></li>
-            <li><a href="./applicantNotificationBoard.html">Notification Board</a></li>
-            <li><a href="./applicantWithdrawMoney.html">Withdraw Money</a></li>
+          <li><a href="./employeeDashboard.html">Dashboard</a></li>
+              <li><a href="./employeeProfile.php">View Profile</a></li>
+              <li><a href="./employeeUpdateProfile.html">Edit Profile</a></li>
+              <li><a href="#">Change Profile Picture</a></li>
+              <li><a href="./employeeChangePassword.html">Change Password</a></li>
+              <li><a href="./employeeForgotPassword.html">Forgot Password</a></li>
+              <li><a href="./employeeCreateDonorList.html">Create Donor List</a></li>
+              <li><a href="./employeeCreateApplicantList.html">Create Applicant List</a></li>
+              <li><a href="./employeeUpdateDonorList.html">Update Donor List</a></li>
+              <li><a href="./employeeUpdateApplicantList.html">Update Applicant List</a></li>
+              <li><a href="./employeeResignRequest.html">Resign Request</a></li>
+              <li><a href="./employeeSchedule.html">Schedule</a></li>
+              <li><a href="./employeeNotificationBoard.html">Notification Board</a></li>
+              <li><a href="./employeeUploadNotice.html">Upload Notice</a></li>
+              <li><a href="./employeeDonateMoney.html">Donate Money</a></li>
           </ul>
         </td>
         <td>
