@@ -1,3 +1,42 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_POST['submit']){
+  $notice = $_POST['sendmsg'];
+  
+  
+  if ( $notice == "") {
+    echo 'Write any  message to admin... go back to <a href="../../View/Applicant/SendMessageToAdmin.php">try again</a>';
+  }
+  else if(str_word_count($notice)<3){
+    echo 'You need to post a correct sentence formate';
+    echo '<br><a href="../../View/Applicant/SendMessageToAdmin.php">try again</a>';
+  }
+
+
+  
+ 
+  else{
+    
+    $applicantSendM=[
+                      'notice'=>$notice, 
+                      
+    ];
+    $applicantSendMJson= json_encode( $applicantSendM );
+    $jsonFile= fopen( "../../Model/Applicant/applicantMsg.json", "w" );
+    fwrite($jsonFile , $applicantSendMJson);
+    fclose($jsonFile);
+    header('location: ../../View/Applicant/applicantdashBoard.html');
+  }
+}
+}
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +44,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>FundBD |Crowdfunding</title>
+  <title>Send ADMIN a Massage</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
 </head>
 <body>
   <!-- ...............................Header Start....................... -->
-  <form action="" >
+  
     <fieldset>
       <table align="center">
         <tr>
           <td>
-            <img src="../../assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">          </td>
+            <img src="../../assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">
+          </td>
           
         </tr>
       </table>
@@ -29,37 +69,30 @@
           </td>
         </tr>
       </table>
+
     </fieldset>
     <!-- .................................Header Close..................... -->
     <!-- .................................Main Content..................... -->
     <fieldset>
-      <form method="post" action="../../controller/Applicant/applicantEditPass.php" >
+      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
         <fieldset>
         
-            <legend><b>Applicant Password Change</b></legend><br>
+            <legend><b>Send ADMIN a Massage</b></legend><br>
         
             <table align="center">
 
 
               <tr>
-                <td>Current Password :</td>
-                <td><input type="password" id="curpword" name="curpword" ></td>
+                <td>Write Your Massage in Details  :</td>
+                <td><input type="text" id="sendmsg" name="sendmsg" size="80" ></td>
             </tr>
-            <tr>
-                <td>New Password :</td>
-                <td><input type="password" id="npword" name="npword" ></td>
-            </tr>
-            <tr>
-              <td>Retype New Password :</td>
-              <td><input type="password" id="Rnpword" name="Rnpword" ></td>
-          </tr>
-            </table>
-            <hr><br>
+            
 
             <table align="center">
               <tr>
-                <td><input type="submit" name="submit" id="submit" value="Update">
-                  <input type="reset" name="reset" id="reset" value="Reset">
+                <td>
+                    <input type="submit" name="submit" id="submit" value="SEND">
+                  
                 </td>
               </tr>
     

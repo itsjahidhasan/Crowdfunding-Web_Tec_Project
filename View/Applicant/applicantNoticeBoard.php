@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    $jsonFile= fopen("../../Model/Admin/notice.json","r");
+    $jsonRead= fread($jsonFile,filesize("../../Model/Admin/notice.json"));
+    $adminNotice = json_decode($jsonRead, true);
+    $notice = $adminNotice ['notice'];
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +16,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>FundBD |Crowdfunding</title>
+  <title>Notice Board|FoundBD</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
 </head>
 <body>
-    <!-- .................................Header Start..................... --> 
-  <form action="" >
+  <!-- ...............................Header Start....................... -->
+  
     <fieldset>
       <table align="center">
         <tr>
           <td>
-            <img src="../../assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">          </td>
+            <img src="../../assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">
+          </td>
           
         </tr>
       </table>
@@ -44,17 +56,9 @@
   
         <table align="center">
           <tr>
-            <td><a href>1.This is first notice</a></td>
+            <td><h3><?php echo $notice ?></h3></td>
           </tr>
-          <tr>
-            <td><a href>2.This is second notice</a></td>
-          </tr>
-          <tr>
-            <td><a href>3.This is third notice</a></td>
-          </tr>
-          <tr>
-            <td><a href>4.This is forth notice</a></td>
-          </tr>
+          
 
         </table> 
     </fieldset>

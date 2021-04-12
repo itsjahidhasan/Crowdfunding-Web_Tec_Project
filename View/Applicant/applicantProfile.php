@@ -58,9 +58,8 @@
             <li><a href="./applicantDashboard.html">Dashboard</a></li>
             <li><a href="./applicantProfile.php">View Profile</a></li>
             <li><a href="./applicantUpdateProfile.html">Edit Profile</a></li>
-            <li><a href="#">Change Profile Picture</a></li>
+            <li><a href="./applicantChangePic.html">Change Profile Picture</a></li>
             <li><a href="./applicantChangePassword.html">Change Password</a></li>
-            <li><a href="./applicantForgotPassword.html">Forgot Password</a></li>
             <li><a href="./applicantDeleteAccount.html">Delete Account</a></li>
             <li><a href="./applicantCauseForDonation.html">Donation Reason</a></li>
             <li><a href="./applicantDonationDetails.html">Donation Details</a></li>
@@ -69,6 +68,7 @@
             <li><a href="./applicantGoalCompleteNotice.html">Goal Complete Notice</a></li>
             <li><a href="./applicantNoticeBoard.html">Notice Board</a></li>
             <li><a href="./applicantWithdrawMoney.html">Withdraw Money</a></li>
+            <li><a href="./sendMessageToAdmin.php">Massage To Admin</a></li>
           </ul>
         </td>
         <td>
