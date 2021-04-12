@@ -66,7 +66,7 @@
             <li><a href="./applicantDonationGoal.html">Set Donation Goal</a></li>
             <li><a href="./applicantEditPost.html">Edit Post</a></li>
             <li><a href="./applicantGoalCompleteNotice.html">Goal Complete Notice</a></li>
-            <li><a href="./applicantNoticeBoard.html">Notice Board</a></li>
+            <li><a href="./applicantNoticeBoard.php">Notice Board</a></li>
             <li><a href="./applicantWithdrawMoney.html">Withdraw Money</a></li>
             <li><a href="./sendMessageToAdmin.php">Massage To Admin</a></li>
           </ul>
