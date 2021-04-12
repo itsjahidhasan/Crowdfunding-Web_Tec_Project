@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    $jsonFile= fopen("../../Model/Admin/notice.json","r");
+    $jsonRead= fread($jsonFile,filesize("../../Model/Admin/notice.json"));
+    $adminNotice = json_decode($jsonRead, true);
+    $notice = $adminNotice ['notice'];
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,17 +64,9 @@
   
         <table align="center">
           <tr>
-            <td><a href>1.This is first notice</a></td>
+            <td><h3><?php echo $notice ?></h3></td>
           </tr>
-          <tr>
-            <td><a href>2.This is second notice</a></td>
-          </tr>
-          <tr>
-            <td><a href>3.This is third notice</a></td>
-          </tr>
-          <tr>
-            <td><a href>4.This is forth notice</a></td>
-          </tr>
+          
 
         </table> 
     </fieldset>

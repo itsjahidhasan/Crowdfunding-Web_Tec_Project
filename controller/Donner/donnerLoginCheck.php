@@ -10,7 +10,7 @@
 			echo 'Password must not be less than eight (8) characters and must  contain spcial character <a href="../../View/Donner/donnerLogin.html">Go Back</a>';
 		}
     if(strlen($_POST["username"])>=2 and strlen($_POST['password'])>=8)
-		{
+     {
 			
 		
 		$check = false;
@@ -25,7 +25,7 @@
 
 		if($check === false)
 		{
-			echo 'Password must contain at least one of the special characters (@, #, $, %) <a href="../../View/Donner/donnerLogin.html">Go Back</a>';
+			echo 'Password must contain at least one of these special characters (@, #, $, %) <a href="../../View/Donner/donnerLogin.html">Go Back</a>';
 		}
 
 		else{
@@ -55,6 +55,6 @@
       }
       fclose($jsonFile);
 		}
-  }
+    }
 	} 
 ?>

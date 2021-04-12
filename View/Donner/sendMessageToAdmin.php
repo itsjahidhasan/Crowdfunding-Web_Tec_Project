@@ -1,3 +1,42 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_POST['submit']){
+  $notice = $_POST['sendmsg'];
+  
+  
+  if ( $notice == "") {
+    echo 'Write any  message to admin... go back to <a href="../../View/Donner/SendMessageToAdmin.php">try again</a>';
+  }
+  else if(str_word_count($notice)<3){
+    echo 'You need to post a correct sentence formate';
+    echo '<br><a href="../../View/Donner/SendMessageToAdmin.php">try again</a>';
+  }
+
+
+  
+ 
+  else{
+    
+    $donnerSendM=[
+                      'notice'=>$notice, 
+                      
+    ];
+    $donnerSendMJson= json_encode( $donnerSendM );
+    $jsonFile= fopen( "../../Model/Donner/donnerMsg.json", "w" );
+    fwrite($jsonFile , $donnerSendMJson);
+    fclose($jsonFile);
+    header('location: ../../View/Donner/DonnerdashBoard.html');
+  }
+}
+}
+
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +44,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Send Money To ADMIN|FoundBD</title>
+  <title>Send Message To ADMIN|FoundBD</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
 </head>
 <body>
@@ -42,7 +81,7 @@
     <!-- .................................Header Close..................... -->
     <!-- .................................Main Content..................... -->
     <fieldset>
-      <form method="post" action="../../controller/Donner/sendMessageToAdmin.php" >
+      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
         <fieldset>
         
             <legend><b>Send Message To ADMIN</b></legend><br>
@@ -52,14 +91,14 @@
 
               <tr>
                 <td>Write Your Description in Details  :</td>
-                <td><input type="text" id="applicantsrclist" name="applicantsrclist" size="80" ></td>
+                <td><input type="text" id="sendmsg" name="sendmsg" size="80" ></td>
             </tr>
             
 
             <table align="center">
               <tr>
                 <td>
-                    <input type="submit" name="smsg" id="smsg" value="SEND MESSAGE">
+                    <input type="submit" name="submit" id="submit" value="SEND">
                   
                 </td>
               </tr>

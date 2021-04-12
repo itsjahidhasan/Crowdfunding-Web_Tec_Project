@@ -66,23 +66,22 @@
             <li><a href="./donnerDashboard.html">Dashboard</a></li>
               <li><a href="./viewProfile.php">View profile</a></li>
               <li><a href="./donnerUpdateProfile.html">Update Profile</a></li>
-              <li><a href="#">Change Profile Picture</a></li>
+              <li><a href="./donnerChangeProfilePic.html">Change Profile Picture</a></li>
               <li><a href="./donnerChangePassword.html">Change Password</a></li>
-              <li><a href="./donnerForgotPassword.html">Forgot Password</a></li>
-              <li><a href="./donnerDonateMoney.html">Donate</a></li>
+              <li><a href="./donnerDonateMoney.html">Donate Money</a></li>
               <li><a href="./searchApplicantList.html">Search Applicant List</a></li>
               <li><a href="./searchForDonnationList.html">Search Donnation List</a></li>
               <li><a href="./donnerDeleteAccount.html">Delete Account</a></li>
               <li><a href="./rechargeMoneyFromBankAccount.html">Recharge money from bank account</a></li>
-              <li><a href="./donnerNoticeBoard.html">See Notice</a></li>
-              <li><a href="./sendMessageToAdmin.html">Send message to ADMIN</a></li>
+              <li><a href="./donnerNoticeBoard.php">See Notice</a></li>
+              <li><a href="./sendMessageToAdmin.">Send message to ADMIN</a></li>
             </ul>
           </td>
           <td>
             <fieldset>
               <legend>Profile</legend>
               <img src="../../assets/user.png" alt="" width="100" height="100"><br>
-              <a href="">Change</a>
+              <a href="donnerChangeProfilePic.html">Change Profile pic</a>
               <table>
                 <tr>
                   <td>Name &nbsp;&nbsp;</td>
