@@ -56,6 +56,7 @@ $donMsg = "<td>"."<h4>Donner Message:</h4>"."</td>"."<td>".$donnerMsg ['msg']."<
     
 
     <!-- .................................Main Content..................... -->
+    <form action="../../controller/Admin/adminReply.php" method="post">
     <fieldset>
       <table align="center" width="1000">
         <tr>
@@ -68,7 +69,13 @@ $donMsg = "<td>"."<h4>Donner Message:</h4>"."</td>"."<td>".$donnerMsg ['msg']."<
         <tr>
           
             <?php echo $emMsg ?>
+
           
+        </tr>
+        <tr>
+        <td>
+        <input type="text" name="sentEmp" id=""><input type="submit"  value="Reply" name="empSubmit">
+        </td>
         </tr>
         
         <tr>
@@ -76,15 +83,27 @@ $donMsg = "<td>"."<h4>Donner Message:</h4>"."</td>"."<td>".$donnerMsg ['msg']."<
             <?php echo $appMsg ?>
           
         </tr>
+        <tr>
+          <td>
+            <input type="text" name="sentApp" id=""><input type="submit" value="Reply" name="appSubmit">
+          </td>
+        </tr>
         
         <tr>
           
             <?php echo $donMsg ?>
           
         </tr>
+
+        <tr>
+          <td>
+            <input type="text" name="sentDon" id=""><input type="submit" value="Reply" name="donSubmit">
+          </td>
+        </tr>
         
       </table>
     </fieldset>
+    </form>
     <!-- .................................Main Content..................... -->
     <!-- .................................Footer Start..................... -->
     <fieldset>
