@@ -1,6 +1,7 @@
 <?php
 	if(isset($_POST['submit']))
 	{
+		
 		if(strlen($_POST["username"])<2)
 		{
 			echo 'User Name must contain at least two (2) characters <a href="../../View/Admin/adminLogin.html">Go Back</a>';

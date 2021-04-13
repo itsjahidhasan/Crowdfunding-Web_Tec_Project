@@ -1,7 +1,8 @@
 <?php
 	if(isset($_POST['Submit']))
 	{
-		if(strlen($_POST['newPass'])<8)
+		
+	  if(strlen($_POST['newPass'])<8)
 		{
 			echo 'Password must not be less than eight (8) characters <a href="../../View/Admin/adminChangePassword.html">Go Back</a>';
 		}
@@ -63,6 +64,6 @@
       }
       fclose($jsonFile);
 		}
-  }
+		}
 	} 
 ?>
