@@ -1,13 +1,22 @@
 <?php
-    session_start();
-    $jsonFile= fopen("../../Model/Admin/notice.json","r");
-    $jsonRead= fread($jsonFile,filesize("../../Model/Admin/notice.json"));
-    $adminNotice = json_decode($jsonRead, true);
-    $notice = $adminNotice ['notice'];
+
+$jsonFile1= fopen("../../Model/employeeMsg.json","r");
+$jsonRead1= fread($jsonFile1,filesize("../../Model/employeeMsg.json"));
+$employeeMsg = json_decode($jsonRead1, true);
+$emMsg ="<td>"."<h4>Employee Message:</h4>"."</td>"."<td>".$employeeMsg ['msg']."</td>";
+
+
+$jsonFile2= fopen("../../Model/applicantMsg.json","r");
+$jsonRead2= fread($jsonFile2,filesize("../../Model/applicantMsg.json"));
+$applicantMsg = json_decode($jsonRead2, true);
+$appMsg ="<td>"."<h4>Applicant Message:</h4>"."</td>"."<td>". $applicantMsg ['msg']."</td>";
+
+$jsonFile3= fopen("../../Model/donnerMsg.json","r");
+$jsonRead3= fread($jsonFile3,filesize("../../Model/donnerMsg.json"));
+$donnerMsg = json_decode($jsonRead3, true);
+$donMsg = "<td>"."<h4>Donner Message:</h4>"."</td>"."<td>".$donnerMsg ['msg']."</td>";
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +24,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FundBD | Notification</title>
+  <title>Admin Dashboard</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
 </head>
 <body>
@@ -48,18 +57,33 @@
 
     <!-- .................................Main Content..................... -->
     <fieldset>
-      
-      
-        <fieldset>
-          <legend>Notice uploaded by Admin</legend>
-          <table align="center" width="1000">
-            <tr>
-              <td align="center"><h3><?php echo $notice?></h3></td>
-            </tr>
-          </table>
-        </fieldset>
-      
+      <table align="center" width="1000">
+        <tr>
+          <td>
+            <h3>Messages</h3>
+            <hr>
+            
+          </td>
+        </tr>
+        <tr>
+          
+            <?php echo $emMsg ?>
+          
+        </tr>
         
+        <tr>
+          
+            <?php echo $appMsg ?>
+          
+        </tr>
+        
+        <tr>
+          
+            <?php echo $donMsg ?>
+          
+        </tr>
+        
+      </table>
     </fieldset>
     <!-- .................................Main Content..................... -->
     <!-- .................................Footer Start..................... -->
@@ -70,7 +94,9 @@
     <!-- .................................Footer Close..................... -->
 </body>
 </html>
+
 <?php
-   fclose($jsonFile);
-   
+   fclose($jsonFile1);
+   fclose($jsonFile2);
+   fclose($jsonFile3);
 ?>
