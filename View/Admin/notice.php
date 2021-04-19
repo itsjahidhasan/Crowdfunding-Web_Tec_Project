@@ -1,10 +1,9 @@
 <?php
     session_start();
-    $jsonFile= fopen("../../Model/Admin/notice.json","r");
-    $jsonRead= fread($jsonFile,filesize("../../Model/Admin/notice.json"));
-    $adminNotice = json_decode($jsonRead, true);
-    $notice = $adminNotice ['notice'];
+    
 
+    require_once('../../Model/Admin/adminModel.php');
+    $users =   getAllAdminNotice();
 ?>
 
 
@@ -52,11 +51,26 @@
       
         <fieldset>
           <legend>Notice uploaded by Admin</legend>
-          <table align="center" width="1000">
+          <table  align="center" width="800">
+        
+          
             <tr>
-              <td align="center"><h3><?php echo $notice?></h3></td>
+              
+              <th>Name</th>
+              <th>Posted Notice</th>
+              
             </tr>
-          </table>
+            <?php for($i=0; $i < count($users); $i++){ ?>
+              <tr>
+                
+                <td Align="center"><?=$users[$i]['username']?></td>
+                <td Align="center"><?=$users[$i]['notice']?></td>
+        
+              </tr>
+        
+              <?php } ?>
+        
+      </table>
         </fieldset>
       
         
@@ -70,7 +84,3 @@
     <!-- .................................Footer Close..................... -->
 </body>
 </html>
-<?php
-   fclose($jsonFile);
-   
-?>

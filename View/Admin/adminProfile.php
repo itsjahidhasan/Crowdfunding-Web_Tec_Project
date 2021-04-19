@@ -1,12 +1,10 @@
 <?php
+    
+    require_once('../../Model/Admin/adminModel.php');
     session_start();
-    $jsonFile= fopen("../../Model/Admin/adminData.json","r");
-    $jsonRead= fread($jsonFile,filesize("../../Model/Admin/adminData.json"));
-    $userValue = json_decode($jsonRead, true);
-    $name = $userValue ['name'];
-		$email = $userValue ['email'];
-		$gender = $userValue ['gender'];
-    $dob = $userValue ['dateOfBarth'];
+    $userName = $_SESSION['userName'];
+    $user = getUserByUsername($userName);
+
 
 ?>
 
@@ -61,9 +59,9 @@
               <li><a href="./adminChangePic.html">Change Profile Picture</a></li>
               <li><a href="./adminChangePassword.html">Change Password</a></li>
               <li><a href="./donateToApplicant.html">Donate</a></li>
-              <li><a href="./employeeList.html">Employee List</a></li>
-              <li><a href="./applicantList.html">Applicant List</a></li>
-              <li><a href="./donnerList.html">Donner List</a></li>
+              <li><a href="./employeeList.php">Employee List</a></li>
+              <li><a href="./applicantList.php">Applicant List</a></li>
+              <li><a href="./donnerList.php">Donner List</a></li>
               <li><a href="./transctionDetails.html">Transaction Details</a></li>
               <li><a href="./postNotice.html">Post A Notice</a></li>
             </ul>
@@ -76,28 +74,28 @@
               <table>
                 <tr>
                   <td>Name &nbsp;&nbsp;</td>
-                  <td>:<?php echo $name?></td>
+                  <td>:<?php echo $user[0]['name'];?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Email &nbsp;&nbsp;</td>
-                  <td>:<?php echo $email?></td>
+                  <td>:<?php echo $user[0]['email'];?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Gender &nbsp;&nbsp;</td>
-                  <td>:<?php echo $gender?></td>
+                  <td>:<?php echo $user[0]['gender'];?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Date of Birth &nbsp;&nbsp;</td>
-                  <td>:<?php echo $dob?></td>
+                  <td>:<?php echo $user[0]['dateOfBarth'];?></td>
                 </tr>
               </table>
               <hr>
@@ -118,6 +116,3 @@
 </html>
 
 
-<?php
-   fclose($jsonFile);
-?>

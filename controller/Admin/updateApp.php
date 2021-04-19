@@ -12,6 +12,7 @@ if($_POST['submit']){
     echo 'email formate should be: info@gmail.com <br><a href="../../View/Admin/updateApplicantList.html">try again</a>';
   }
   else{
+    
     header('location: ../../View/Admin/dashBoard.html');
   }
 }

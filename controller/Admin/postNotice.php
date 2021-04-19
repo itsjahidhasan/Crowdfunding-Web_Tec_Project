@@ -1,4 +1,5 @@
 <?php
+require_once('../../Model/Admin/adminModel.php');
 if($_POST['submit']){
   $notice = $_POST['post'];
   
@@ -13,16 +14,22 @@ if($_POST['submit']){
   
  
   else{
+
+    session_start();
     
     $adminPost=[
                       'notice'=>$notice, 
+                      'username' => $_SESSION['userName'],
                       
     ];
-    $adminPostJson= json_encode( $adminPost );
-    $jsonFile= fopen( "../../Model/Admin/notice.json", "w" );
-    fwrite($jsonFile , $adminPostJson);
-    fclose($jsonFile);
-    header('location: ../../View/Admin/dashBoard.html');
+    $save =insertNotice($adminPost);
+    if($save){
+      header('location: ../../View/Admin/notice.php');
+    }
+    else{
+      echo "File didn't updated";
+    }
+    
   }
 }
 

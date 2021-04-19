@@ -1,4 +1,5 @@
 <?php
+	require_once('../../Model/Admin/adminModel.php');
 	if(isset($_POST['submit']))
 	{
 		
@@ -32,20 +33,21 @@
 		else{
       $userName =  $_POST [ 'username' ];
 	    $password =   $_POST [ 'password' ];
-			$jsonFile= fopen("../../Model/Admin/adminData.json","r");
-		  $jsonRead= fread($jsonFile,filesize("../../Model/Admin/adminData.json"));
+			$flag = adminLogin($userName, $password);
+			
+			
 
-      $userValue = json_decode($jsonRead, true);
-
-      if ( $password == $userValue ['password'] && $userName == $userValue ['userName'] ) {
+      if ( $flag = true ) {
 				if(isset($_POST['rememberMe'])){
 					setcookie('userName',$userName, time()+60*60*24*7);
 				}
 					
 				
+				
+				
 				session_start();
-				$_SESSION['usernmae'] = $userName;
-				$_SESSION['password']=$password;
+				$_SESSION['userName'] = $userName;
+				$_SESSION['password'] = $password;
 				
 				
 				
@@ -54,7 +56,7 @@
       else{
         echo "Password or Username didn't match click here to".'<a href="../../View/Admin/adminLogin.html"> try again</a>';
       }
-      fclose($jsonFile);
+      
 		}
   }
 	} 

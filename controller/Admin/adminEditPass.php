@@ -1,4 +1,6 @@
 <?php
+
+require_once('../../Model/Admin/adminModel.php');
 	if(isset($_POST['Submit']))
 	{
 		
@@ -31,38 +33,34 @@
 		else{
       
 	    session_start();
-			$jsonFile= fopen("../../Model/Admin/adminData.json","r");
-		  $jsonRead= fread($jsonFile,filesize("../../Model/Admin/adminData.json"));
-
-      $userValue = json_decode($jsonRead, true);
+			
 
       if ( $_SESSION['password'] == $_POST['currentPass'] ) {
 				
-        $adminData=[
-          'name'=>$userValue ['name'], 
-          'userName'=>$userValue ['userName'], 
-          'email'=> $userValue ['email'],
+        $password=[
+           
+          'userName'=>$_SESSION['userName'], 
+          
           'password'=>$_POST['retypePass'], 
-          'gender'=> $userValue ['gender'],
-          'dateOfBarth'=> $userValue ['dateOfBarth'],
+          
+          
             ];
-            $adminDataJson= json_encode( $adminData );
-            $jsonFile1= fopen( "../../Model/Admin/adminData.json", "w" );
-            fwrite($jsonFile1 , $adminDataJson);
-            fclose($jsonFile1);
+           
+						$save =updatePassword($password);
+						if($save){
+							$_SESSION['password']=$_POST['newPass'];
+							header('location: ../logout.php');
+						}
+						else{
+							echo "File didn't updated";
+						}				
 				
 				
-			
-				$_SESSION['password']=$_POST['newPass'];
-				
-				
-				
-        header('location: ../logout.php');
-      }
+			}
       else{
         echo "Incorrect current password".'<a href="../../View/Admin/adminChangePassword.html"> try again</a>';
       }
-      fclose($jsonFile);
+      
 		}
 		}
 	} 

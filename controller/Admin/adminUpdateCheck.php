@@ -1,4 +1,6 @@
 <?php
+require_once('../../Model/Admin/adminModel.php');
+
 if($_POST['update']){
   $name = $_POST['name'];
   $email = $_POST['email'];
@@ -27,19 +29,24 @@ if($_POST['update']){
  
   else{
     session_start();
-    $adminData=[
+    $user=[
                       'name'=>$name, 
-                      'userName'=>$_SESSION['usernmae'], 
+                       
                       'email'=> $email,
-                      'password'=>$_SESSION['password'], 
+                      
                       'gender'=> $gender,
                       'dateOfBarth'=> $dateOfBirth,
+                      'username' => $_SESSION['userName'],
     ];
-    $adminDataJson= json_encode( $adminData );
-    $jsonFile= fopen( "../../Model/Admin/adminData.json", "w" );
-    fwrite($jsonFile , $adminDataJson);
-    fclose($jsonFile);
-    header('location: ../../View/Admin/adminProfile.php');
+    //Admin database goes here
+    $save =updateUser($user);
+    if($save){
+      header('location: ../../View/Admin/adminProfile.php');
+    }
+    else{
+      echo "File didn't updated";
+    }
+    
   }
 }
 

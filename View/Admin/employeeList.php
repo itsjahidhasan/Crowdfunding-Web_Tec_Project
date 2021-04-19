@@ -1,10 +1,16 @@
+<?php
+require_once('../../Model/Admin/adminModel.php');
+$users =   getEmployeeifo();
+  
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FundBD | Applicant List</title>
+  <title>FundBD | Employee List</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
 </head>
 <body>
@@ -38,43 +44,41 @@
     <!-- .................................Main Content..................... -->
     <fieldset>
       <fieldset>
-        <legend>Applicant List</legend>
+        <legend>Employee List</legend>
+        <br>
       <table border="1" align="center" width="800">
         
           
             <tr>
+              <th>ID</th>
               <th>Name</th>
               <th>Email</th>
               <th>User Name</th>
+              <th>Salary</th>
               <th>Date of Birth</th>
             </tr>
-            <tr>
-              <td align="center">Md. Jahid Hasn</td>
-              <td align="center">hasanj572@gmail.com</td>
-              <td align="center">jahid34</td>
-              <td align="center">23/09/1998</td>
-            </tr>
-            <tr>
-              <td align="center">Md. Rokib Hasn</td>
-              <td align="center">hasanr572@gmail.com</td>
-              <td align="center">rokib</td>
-              <td align="center">23/09/1995</td>
-            </tr>
-            <tr>
-              <td align="center">Md. Ali Hasn</td>
-              <td align="center">ali@gmail.com</td>
-              <td align="center">ali143</td>
-              <td align="center">25/08/1997</td>
-            </tr>
+            <?php for($i=0; $i < count($users); $i++){ ?>
+              <tr>
+                <td><?=$users[$i]['id']?></td>
+                <td><?=$users[$i]['name']?></td>
+                <td><?=$users[$i]['email']?></td>
+                <td><?=$users[$i]['username']?></td>
+                <td><?=$users[$i]['salary']?></td>
+                <td><?=$users[$i]['dateOfBirth']?></td>
+                
+              </tr>
+        
+              <?php } ?>
         
       </table>
+      <br><br>
       <table align="center">
         <tr>
-          <td><a href="./updateApplicantList.html">Update Applicant List</a></td>
+          <td><a href="./updateEmployeeList.html">Update Employee List</a></td>
         </tr>
       </table>
+      
     </fieldset>
-    
     </fieldset>
     <!-- .................................Main Content..................... -->
     <!-- .................................Footer Start..................... -->
