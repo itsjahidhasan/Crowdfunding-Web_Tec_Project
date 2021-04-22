@@ -1,9 +1,4 @@
-<?php
-require_once('../../Model/Admin/adminModel.php');
-$users =   getEmployeeifo();
-  
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +7,27 @@ $users =   getEmployeeifo();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FundBD | Employee List</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
+  <script type="text/javascript" src="../JS/admin/emplyeedata.js"></script>
+
+
+
+
+<!-- CSS properties -->
+<style>
+
+.empDatabtn{
+  background-color: yellow;
+  border-radius: 13%;
+  height: 48px;
+  width: 120px;
+}
+.empDatabtn:hover {
+  background-color: green;
+}
+
+
+
+</style>
 </head>
 <body>
   <!-- ...............................Header Start....................... -->
@@ -46,31 +62,14 @@ $users =   getEmployeeifo();
       <fieldset>
         <legend>Employee List</legend>
         <br>
-      <table border="1" align="center" width="800">
+        <div align="center">
+        <input type="button" value="See Employee List" class="empDatabtn" name="empData" onclick="ajax();toggle()">
+        </div>
         
-          
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>User Name</th>
-              <th>Salary</th>
-              <th>Date of Birth</th>
-            </tr>
-            <?php for($i=0; $i < count($users); $i++){ ?>
-              <tr>
-                <td><?=$users[$i]['id']?></td>
-                <td><?=$users[$i]['name']?></td>
-                <td><?=$users[$i]['email']?></td>
-                <td><?=$users[$i]['username']?></td>
-                <td><?=$users[$i]['salary']?></td>
-                <td><?=$users[$i]['dateOfBirth']?></td>
-                
-              </tr>
-        
-              <?php } ?>
-        
-      </table>
+        <br>
+        <br>
+        <div class="result" id="result" align="center"></div>
+      
       <br><br>
       <table align="center">
         <tr>

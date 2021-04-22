@@ -1,6 +1,6 @@
 <?php
 
-	$dbname = "crowdfunding";
+	$dbname = "webtech_project";
 	$dbuser = "root";
 	$dbpass = "";
 	$host	= "localhost";

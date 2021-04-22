@@ -12,6 +12,26 @@ $users =   getAppinfo();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FundBD | Applicant List</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
+  <script type="text/javascript" src="../JS/admin/appdata.js"></script>
+
+
+
+<!-- CSS properties -->
+<style>
+
+.appDatabtn{
+  background-color: yellow;
+  border-radius: 13%;
+  height: 48px;
+  width: 120px;
+}
+.appDatabtn:hover {
+  background-color: green;
+}
+
+
+
+</style>
 </head>
 <body>
   <!-- ...............................Header Start....................... -->
@@ -45,29 +65,17 @@ $users =   getAppinfo();
     <fieldset>
       <fieldset>
         <legend>Applicant List</legend>
-      <table border="1" align="center" width="800">
+        <br>
+        <div align="center">
+        <input type="button" value="See Applicant List" class="appDatabtn" id="appDatabtn" name="appData" onclick="ajax();toggle();">
+        </div>
         
-          
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>User Name</th>
-              <th>Date of Birth</th>
-            </tr>
-            <?php for($i=0; $i < count($users); $i++){ ?>
-              <tr>
-                <td><?=$users[$i]['id']?></td>
-                <td><?=$users[$i]['name']?></td>
-                <td><?=$users[$i]['email']?></td>
-                <td><?=$users[$i]['username']?></td>
-                <td><?=$users[$i]['dateOfBirth']?></td>
-                
-              </tr>
-        
-              <?php } ?>
-        
-      </table>
+        <br>
+        <br>
+        <div class="result" id="result" align="center"></div>
+      
+      <br><br>
+      
       <table align="center">
         <tr>
           <td><a href="./updateApplicantList.html">Update Applicant List</a></td>

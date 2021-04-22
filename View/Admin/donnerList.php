@@ -1,10 +1,3 @@
-<?php
-require_once('../../Model/Admin/adminModel.php');
-$users =   getDoninfo();
-  
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +6,26 @@ $users =   getDoninfo();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FundBD | Donner List</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
+  <script type="text/javascript" src="../JS/admin/dondata.js"></script>
+
+
+
+  <!-- CSS properties -->
+  <style>
+
+      .donDatabtn{
+        background-color: yellow;
+        border-radius: 13%;
+        height: 48px;
+        width: 120px;
+      }
+      .donDatabtn:hover {
+        background-color: green;
+      }
+
+
+
+  </style>
 </head>
 <body>
   <!-- ...............................Header Start....................... -->
@@ -46,29 +59,13 @@ $users =   getDoninfo();
     <fieldset>
       <fieldset>
         <legend>Donner List</legend>
-      <table border="1" align="center" width="800">
+        <div align="center">
+        <input type="button" value="See Donner List"  name="donData" class="donDatabtn" onclick="ajax(); toggle();">
+        </div>
         
-          
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>User Name</th>
-              <th>Date of Birth</th>
-            </tr>
-            <?php for($i=0; $i < count($users); $i++){ ?>
-              <tr>
-                <td><?=$users[$i]['id']?></td>
-                <td><?=$users[$i]['name']?></td>
-                <td><?=$users[$i]['email']?></td>
-                <td><?=$users[$i]['username']?></td>
-                <td><?=$users[$i]['dateOfBirth']?></td>
-                
-              </tr>
-        
-              <?php } ?>
-        
-      </table>
+        <br>
+        <br>
+        <div class="result" id="result" align="center"></div>
       <br><br>
       <table align="center">
         <tr>
