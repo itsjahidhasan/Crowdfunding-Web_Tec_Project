@@ -45,11 +45,23 @@
             <table align="center">
               <tr>
                   <td>User Name</td>
-                  <td>:<input type="text" name="username"></td>
+                  <td>:<input type="text" name="username" id="userName" onkeyup="userNameValidation()"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td id="userNameErorr">
+
+                </td>
               </tr>
               <tr>
                   <td>Password </td>
-                  <td>:<input type="password" name="password"></td>
+                  <td>:<input type="password" name="password" id="password" onkeyup="passwordValidation()"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td id="passwordErorr">
+
+                </td>
               </tr>
             </table>	
               <hr>
@@ -79,5 +91,54 @@
     </fieldset>
  
     <!-- .................................Footer Close..................... -->
+
+
+    <!-- js code goes here -->
+    <script>
+      function userNameValidation() {
+        var username, msg;
+      
+       
+        username = document.getElementById("userName").value;
+        
+        
+        if (username=="") {
+          msg = "Can not be empty";
+        } 
+        else{
+          if (username.length<2 ) {
+            msg = "Must contain (2) characters"
+          } else {
+            msg = ""
+          }   
+        }
+        
+
+        document.getElementById("userNameErorr").innerHTML = msg;
+      }
+      function passwordValidation() {
+        var password, msg;
+      
+       
+        password = document.getElementById("password").value;
+        
+        
+        if (password=="") {
+          msg = "Can not be empty";
+        } 
+        else{
+          if (password.length<8 ) {
+            msg = "Must not be less than (8)characters"
+          } else {
+            msg = ""
+          }   
+        }
+        
+
+        document.getElementById("passwordErorr").innerHTML = msg;
+      }
+      
+      
+      </script>
 </body>
 </html>

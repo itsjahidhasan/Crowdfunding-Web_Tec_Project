@@ -1,9 +1,4 @@
-<?php
-require_once('../../Model/Admin/adminModel.php');
-$users =   getAppinfo();
-  
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

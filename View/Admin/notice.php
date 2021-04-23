@@ -1,10 +1,3 @@
-<?php
-    session_start();
-    
-
-    require_once('../../Model/Admin/adminModel.php');
-    $users =   getAllAdminNotice();
-?>
 
 
 
@@ -16,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FundBD | Notification</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
+  <script type="text/javascript" src="../JS/admin/notice.js"></script>
 </head>
 <body>
   <!-- ...............................Header Start....................... -->
@@ -51,26 +45,14 @@
       
         <fieldset>
           <legend>Notice uploaded by Admin</legend>
-          <table  align="center" width="800">
+        <br>
+        <div align="center">
+        <input type="button" value="See Notice" class="noticebtn" id="noticebtn" name="noticebtn" onclick="ajax();toggle();">
+        </div>
         
-          
-            <tr>
-              
-              <th>Name</th>
-              <th>Posted Notice</th>
-              
-            </tr>
-            <?php for($i=0; $i < count($users); $i++){ ?>
-              <tr>
-                
-                <td Align="center"><?=$users[$i]['username']?></td>
-                <td Align="center"><?=$users[$i]['notice']?></td>
-        
-              </tr>
-        
-              <?php } ?>
-        
-      </table>
+        <br>
+        <br>
+        <div class="result" id="result" align="center"></div>
         </fieldset>
       
         

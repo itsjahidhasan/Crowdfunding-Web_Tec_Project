@@ -95,7 +95,7 @@
               <table>
                 <tr>
                   <td>Date of Birth &nbsp;&nbsp;</td>
-                  <td>:<?php echo $user[0]['dateOfBarth'];?></td>
+                  <td>:<?php echo $user[0]['dateOfBirth'];?></td>
                 </tr>
               </table>
               <hr>

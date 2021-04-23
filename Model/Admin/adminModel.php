@@ -31,7 +31,7 @@
 
 	function updateUser($user){
 		$conn = getConnection();
-		$sql = "update admininfo set name='{$user['name']}', email='{$user['email']}', gender='{$user['gender']}', dateOfBarth='{$user['dateOfBarth']}' where username='{$user['username']}'";
+		$sql = "update admininfo set name='{$user['name']}', email='{$user['email']}', gender='{$user['gender']}', dateOfBirth='{$user['dateOfBarth']}' where username='{$user['username']}'";
 		
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -41,7 +41,7 @@
 	}
 	function updatePassword($user){
 		$conn = getConnection();
-		$sql = "update admininfo set password='{$user['password']}' where username='{$user['userName']}'";
+		$sql = "update admininfo set password='{$user['password']}' where username='{$user['username']}'";
 		
 		if(mysqli_query($conn, $sql)){
 			return true;

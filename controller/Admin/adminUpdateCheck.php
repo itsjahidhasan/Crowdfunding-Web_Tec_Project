@@ -29,6 +29,7 @@ if($_POST['update']){
  
   else{
     session_start();
+    $user_name = $_SESSION['userName'];
     $user=[
                       'name'=>$name, 
                        
@@ -36,7 +37,7 @@ if($_POST['update']){
                       
                       'gender'=> $gender,
                       'dateOfBarth'=> $dateOfBirth,
-                      'username' => $_SESSION['userName'],
+                      'username' => $user_name,
     ];
     //Admin database goes here
     $save =updateUser($user);
