@@ -1,4 +1,6 @@
 <?php
+require_once('../../Model/Applicant/applicantModel.php');
+
 if($_POST['update']){
   $name = $_POST['name'];
   $email = $_POST['email'];
@@ -27,19 +29,24 @@ if($_POST['update']){
  
   else{
     session_start();
-    $applicantData=[
+    $user=[
                       'name'=>$name, 
-                      'userName'=>$_SESSION['usernmae'], 
+                       
                       'email'=> $email,
-                      'password'=>$_SESSION['password'], 
+                      
                       'gender'=> $gender,
                       'dateOfBarth'=> $dateOfBirth,
+                      'username' => $_SESSION['userName'],
     ];
-    $applicantDataJson= json_encode( $applicantData );
-    $jsonFile= fopen( "../../Model/Applicant/applicantData.json", "w" );
-    fwrite($jsonFile , $applicantDataJson);
-    fclose($jsonFile);
-    header('location: ../../View/Applicant/applicantProfile.php');
+    //Admin database goes here
+    $save =updateUser($user);
+    if($save){
+      header('location: ../../View/Applicant/applicantProfile.php');
+    }
+    else{
+      echo "File didn't updated";
+    }
+    
   }
 }
 

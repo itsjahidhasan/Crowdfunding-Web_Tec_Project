@@ -4,25 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>FundBD |Crowdfunding</title>
+  <title>FundBD | Update Profile</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
 </head>
 <body>
-    <!-- .................................Header Start..................... --> 
-  <form action="" >
+  <!-- ...............................Header Start....................... -->
+  
     <fieldset>
       <table align="center">
         <tr>
           <td>
-            <img src="../../assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">          </td>
+            <img src="../../assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">
+          </td>
           
         </tr>
       </table>
       <table align="center">
         <tr>
           <td>
-            <a href="./applicantdashBoard.html">Dashboard</a>&nbsp;
+            <a href="./applicantDashBoard.html">Dashboard</a>&nbsp;
             <a href="./applicantProfile.php">Profile</a>&nbsp;
             <a href="./notification.html">Notification</a>&nbsp;
             <a href="../../controller/logout.php">Logout</a>
@@ -30,115 +30,96 @@
         </tr>
       </table>
     </fieldset>
-          <!-- ...............................Header Close....................... -->
+    <!-- .................................Header Close..................... -->
 
 
+    
 
-          <!-- .................................Main Content..................... -->
-    <fieldset>
-      <form method="post" action="../../controller/Applicant/applicantUpdateCheck.php" >
-    <fieldset>
-    
-        <legend><b>Applicant Profile Update</b></legend><br>
-    
-  
-        <label>Name : </label>
-        <input type="text" id="name" name="name" ><br>
-        <hr><br>
-    
-        <label>Email :</label>
-        <input type="text" id="email" name="email" ><br>
-        <hr><br>
-    
-        <label>User Name : </label>
-        <input type="text" id="uname" name="uname" ><br>
-        <hr><br>
-    
-        <label>Password :  </label>
-        <input type="password" id="pword" name="pword" ><br>
-        <hr><br>
-    
-        <label>Confirm Password : </label>
-        <input type="password" id="conpword" name="conpword" ><br>
-        <hr><br>
-    
-        <label>Occupation :</label>
-        <input type="text" id="occupation" name="occupation" ><br>
-        <hr><br>
-    
-       
-    
-        <fieldset>
-    
-        <legend>Gender</legend>
-    
-        
-    
-        <input type="radio" name="gender" value="Male">
-        <label class="male">Male</label>
-    
-        <input type="radio" name="gender" value="Female">
-        <label class="female">Female</label>
-    
-        <input type="radio" name="gender" value="Other">
-        <label class="other">Other</label>
-    
-        </fieldset>
-    
-        <hr>
-    
-    
-    
-    <fieldset>
-    
-    <legend>Date Of Birth</legend>
-    
-    
-    
-    <input type="text" id="date" name="date" size="5"> /
-    <input type="text" id="month" name="month" size="5"> /
-    <input type="text" id="year" name="year" size="6"><i> (dd/mm/yyyy)</i>
-    
-    
-    </fieldset>
-    
-    
-    
-        <hr>
-		<fieldset>
-    
-        <legend>Yearly Income</legend>
-    
-        
-    
-        <input type="radio" name="Yearly Income" value="Below 10000">
-        <label class="Below 10000">Below 10000</label>
-    
-        <input type="radio" name="Yearly Income" value="10000 to 50000">
-        <label class="10000 to 50000">10000 to 50000</label>
-    
-        <input type="radio" name="Yearly Income" value="More Than 50000">
-        <label class="More Than 100000">More Than 100000</label>
-    
-        </fieldset>
-    
-        <hr>
-    
-        <input type="submit" name="submit" id="submit" value="Update">
-        
-        <input type="reset" name="reset" id="reset" value="Reset"><br><br>
-    </fieldset>
-    </form>
-</fieldset>
-<fieldset>
     <!-- .................................Main Content..................... -->
-
+    <fieldset>
+      <table align="center" width="1000">
+        <tr>
+          <td>
+            <h3>Applicant Account</h3>
+            <hr>
+            <ul>
+              <li><a href="./applicantDashBoard.html">Dashboard</a></li>
+              <li><a href="./applicantProfile.php">View Profile</a></li>
+              <li><a href="./applicantUpdateProfile.html">Edit Profile</a></li>
+              <li><a href="./applicantChangePic.html">Change Profile Picture</a></li>
+              <li><a href="./aplicantChangePassword.html">Change Password</a></li>
+              <li><a href="./applicantDeleteAccount.html">Delete Account</a></li>
+              <li><a href="./applicantCauseForDonation.html">Donation Reason</a></li>
+              <li><a href="./applicantDonationDetails.html">Donation Details</a></li>
+              <li><a href="./applicantDonationGoal.html">Set Donation Goal</a></li>
+              <li><a href="./applicantEditPost.html">Edit Post</a></li>
+              <li><a href="./applicantGoalCompleteNotice.html">Goal Complete Notice</a></li>
+              <li><a href="./applicantNoticeBoard.php">Notice Board</a></li>
+              <li><a href="./applicantWithdrawMoney.html">Withdraw Money</a></li>
+              <li><a href="./sendMessageToAdmin.php">Massage To Admin</a></li>
+            </ul>
+          </td>
+          <td>
+            
+              <form action="../../controller/Applicant/applicantUpdateCheck.php" method="post">
+                  <fieldset>
+                    <legend>Edit Profile</legend>
+                    
+                    <table>
+                      <tr>
+                        <td>Name &nbsp;&nbsp;</td>
+                        <td>:<input type="text" id="name" name="name" ></td>
+                      </tr>
+                    </table>
+                    <hr>
+                    <table>
+                      <tr>
+                        <td>Email &nbsp;&nbsp;</td>
+                        <td>:<input type="text" id="email" name="email" ></td>
+                      </tr>
+                    </table>
+                    <hr>
+                    <table>
+                      <tr>
+                        <td>Gender &nbsp;&nbsp;</td>
+                        <td>:<input type="radio" name="gender" value="Male" checked>
+                          <label class="male">Male</label>
+                      
+                          <input type="radio" name="gender" value="Female">
+                          <label class="female">Female</label>
+                      
+                          <input type="radio" name="gender" value="Other">
+                          <label class="other">Other</label></td>
+                      </tr>
+                    </table>
+                    <hr>
+                    <table>
+                      <tr>
+                        <td>Date of Birth &nbsp;&nbsp;</td>
+                        <td>:<input type="text" id="date" name="date" size="5"> /
+                          <input type="text" id="month" name="month" size="5"> /
+                          <input type="text" id="year" name="year" size="6"><i> (dd/mm/yyyy)</i></td>
+                      </tr>
+                    </table>
+                    <hr>
+                    <input type="submit" name="update" value="Update">
+                  
+                  </fieldset>
+              </form>
+            
+          </td>
+        </tr>
+      </table>
+     
+    </fieldset>
+    
+    
+    <!-- .................................Main Content..................... -->
     <!-- .................................Footer Start..................... -->
     <fieldset>
-      <p align="center">Copyright	&#169;2021</p>
+      <p align="center">copyright	&#169;2021</p>
     </fieldset>
-    <!-- .................................Footer Close..................... -->
-  </form>
 
+    <!-- .................................Footer Close..................... -->
 </body>
 </html>
