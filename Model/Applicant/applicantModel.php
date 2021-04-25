@@ -41,7 +41,7 @@
 	}
 	function updatePassword($user){
 		$conn = getConnection();
-		$sql = "update admininfo set password='{$user['password']}' where username='{$user['userName']}'";
+		$sql = "update applicantinfo set password='{$user['password']}' where username='{$user['userName']}'";
 		
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -50,5 +50,17 @@
 		}
 	}
 
+	function insertApplicanData($user){
+		$conn = getConnection();
+		$sql = "insert into applicantinfo values('', '{$user['name']}', '{$user['email']}', '{$user['password']}',  '{$user['dateOfBarth']}','{$user['userName']}', '{$user['occupation']}', '{$user['yearlyIncome']}', '{$user['gender']}')";
+		
+		
+		
+		if(mysqli_query($conn, $sql)){
+			return true;
+		  }else{
+			return false;
+		  }
+	  }
 
 ?>

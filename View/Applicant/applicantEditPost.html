@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- .................................Header Start..................... --> 
-  <form action="" >
+  <form action="" onsubmit="return editPost()">
     <fieldset>
       <table align="center">
         <tr>
@@ -44,7 +44,10 @@
   
         <table align="center">
           <td>Edit Your Post :</td>
-                <td><input type="text" id="epost" name="epost" ></td>
+                <td><input type="text" id="epost" name="epost" >
+                &nbsp;
+                <span id="errepost" style="color: red"></span> <!--For JS error message-->
+                </td>
         </table> 
         <hr><br>
         <table align="center">
@@ -66,6 +69,46 @@
     </fieldset>
     <!-- .................................Footer Close..................... -->
   </form>
+
+
+
+
+<script>
+  function get(id)
+  {
+      return document.getElementById(id);
+  }
+  function editPost()
+  {
+      var epost = get("epost").value;
+      
+  
+    
+      var validate = true;
+      
+
+      if(epost=="")
+      {
+          validate = false;
+         get("errepost").innerHTML="Please Enter Your Post";
+          get("epost").focus();
+      }
+      else
+      {
+          get("errepost").innerHTML="";
+      }
+
+    
+      
+
+
+
+      return validate;
+
+  }
+
+
+</script>
 
 </body>
 </html>

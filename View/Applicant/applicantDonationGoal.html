@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- .................................Header Start..................... --> 
-  <form action="" >
+  <form action="" onsubmit="return  donationGoal()" >
     <fieldset>
       <table align="center">
         <tr>
@@ -82,6 +82,37 @@
     </fieldset>
     <!-- .................................Footer Close..................... -->
   </form>
+
+
+  <script>
+    function get(id)
+       {
+           return document.getElementById(id);
+       }
+   
+       function donationGoal()
+       {
+   
+         var dgoal = document.getElementsByName("dgoal");
+   
+  
+         var validate = true;
+         
+   
+         if (!(dgoal[0].checked || dgoal[1].checked || dgoal[2].checked)) 
+         {
+            // get("errdgoal").innerHTML="Please Select Your donation goal";
+             alert("Please Select Your donation goal");
+             validate = false;
+         }
+        
+    
+         return validate;
+       }
+   
+   
+   </script>
+
 
 </body>
 </html>

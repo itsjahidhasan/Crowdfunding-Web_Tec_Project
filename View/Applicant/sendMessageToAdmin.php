@@ -11,8 +11,6 @@ if($_POST['submit']){
     echo 'You need to post a correct sentence formate';
     echo '<br><a href="../../View/Applicant/SendMessageToAdmin.php">try again</a>';
   }
-
-
   
  
   else{
@@ -49,7 +47,7 @@ if($_POST['submit']){
 </head>
 <body>
   <!-- ...............................Header Start....................... -->
-  
+  <form action="" onsubmit="return sendMassage()" >
     <fieldset>
       <table align="center">
         <tr>
@@ -84,7 +82,10 @@ if($_POST['submit']){
 
               <tr>
                 <td>Write Your Massage in Details  :</td>
-                <td><input type="text" id="sendmsg" name="sendmsg" size="80" ></td>
+                <td><input type="text" id="sendmsg" name="sendmsg" size="80" >
+              &nbsp;
+              <span id="errsendmsg" style="color: red"></span> <!--For JS error message-->
+              </td>
             </tr>
             
 
@@ -109,5 +110,38 @@ if($_POST['submit']){
   </form>
   <!-- .................................Footer Close..................... -->
 
+  <script>
+  function get(id)
+  {
+      return document.getElementById(id);
+  }
+  function sendMassage()
+  {
+      var sendmsg = get("sendmsg").value;
+      
+    
+      var validate = true;
+      if(sendmsg=="")
+      {
+          validate = false;
+         get("errsendmsg").innerHTML="Please Enter Your massage";
+          get("sendmsg").focus();
+      }
+      else
+      {
+          get("errsendmsg").innerHTML="";
+      }
+
+      return validate;
+
+  }
+
+
+</script>
+
 </body>
 </html>
+
+
+
+

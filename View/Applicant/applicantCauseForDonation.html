@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- .................................Header Start..................... --> 
-  <form action="" >
+  <form action="" onsubmit="return CauseForDonation()">
     <fieldset>
       <table align="center">
         <tr>
@@ -44,7 +44,10 @@
   
         <table align="center">
           <td>Reason for Donation :</td>
-                <td><input type="text" id="rdonation" name="rdonation" ></td>
+                <td><input type="text" id="rdonation" name="rdonation" >
+                  &nbsp;
+                  <span id="errrdonation" style="color:red"></span> <!--For JS error message-->
+                </td>
         </table> 
         <hr><br>
         <table align="center">
@@ -66,6 +69,36 @@
     </fieldset>
     <!-- .................................Footer Close..................... -->
   </form>
+ 
+
+<script>
+  function get(id)
+  {
+      return document.getElementById(id);
+  }
+  function CauseForDonation()
+  {
+      var rdonation = get("rdonation").value;
+       
+      var validate = true;
+      if(rdonation=="")
+      {
+          validate = false;
+         get("errrdonation").innerHTML="Please Enter Reason for Donation";
+          get("rdonation").focus();
+      }
+      else
+      {
+          get("errrdonation").innerHTML="";
+      }
+
+      return validate;
+
+  }
+
+
+</script>
+
 
 </body>
 </html>

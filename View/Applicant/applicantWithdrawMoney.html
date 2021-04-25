@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- .................................Header Start..................... --> 
-  <form action="" >
+  <form action="" onsubmit="return withdrawMoney()" >
     <fieldset>
       <table align="center">
         <tr>
@@ -36,7 +36,7 @@
 
           <!-- .................................Main Content..................... -->
     <fieldset>
-  <form method="post" action="../../controller/Applicant/applicantWithdrawMoney.php" >
+  <form method="post" action="../../controller/Applicant/applicantWithdrawMoney.php">
     <fieldset>
     
         <legend><b>Applicant Money Withdraw</b></legend><br>
@@ -45,11 +45,20 @@
         <table align="center">
           <tr>
           <td>Write Account no :</td>
-                <td><input type="text" id="accno" name="accno" ></td>
+                <td><input type="text" id="accno" name="accno" >
+                  &nbsp;
+                <span id="erraccno" style="color: red"></span> <!--For JS error message-->
+
+                </td>
           </tr>
           <tr>
                 <td>Write Amount :</td>
-                <td><input type="text" id="amount" name="amount" ></td>
+                <td><input type="text" id="amount" name="amount" >
+                 &nbsp;
+                <span id="erramount" style="color: red"></span> <!--For JS error message-->
+
+
+                </td>
           </tr>
         </table> 
         <hr><br>
@@ -72,6 +81,53 @@
     </fieldset>
     <!-- .................................Footer Close..................... -->
   </form>
+
+
+<script>
+  function get(id)
+  {
+      return document.getElementById(id);
+  }
+  function withdrawMoney()
+  {
+      var accno = get("accno").value;
+      var amount = get("amount").value;
+      
+  
+    
+      var validate = true;
+      
+
+      if(accno=="")
+      {
+          validate = false;
+         get("erraccno").innerHTML="Please Write Your Account no";
+          get("accno").focus();
+      }
+      else
+      {
+          get("erraccno").innerHTML="";
+      }
+
+
+      if(amount=="")
+      {
+          validate = false;
+         get("erramount").innerHTML="Please Write Your Amount";
+          get("amount").focus();
+      }
+      else
+      {
+          get("erramount").innerHTML="";
+      }
+
+
+      return validate;
+
+  }
+
+
+</script>
 
 </body>
 </html>

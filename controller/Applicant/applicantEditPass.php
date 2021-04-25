@@ -6,7 +6,7 @@ require_once('../../Model/Applicant/applicantModel.php');
 		
 	  if(strlen($_POST['newPass'])<8)
 		{
-			echo 'Password must not be less than eight (8) characters <a href="../../View/Employee/employeeChangePassword.html">Go Back</a>';
+			echo 'Password must not be less than eight (8) characters <a href="../../View/Applicant/applicantChangePassword.html">Go Back</a>';
 		}
     if(strlen($_POST['newPass'])>=8)
 		{
@@ -24,10 +24,10 @@ require_once('../../Model/Applicant/applicantModel.php');
 
 		if($check === false)
 		{
-			echo 'Password must contain at least one of the special characters (@, #, $, %) <a href="../../View/Admin/adminChangePassword.html">Go Back</a>';
+			echo 'Password must contain at least one of the special characters (@, #, $, %) <a href="../../View/Applicant/applicantChangePassword.html">Go Back</a>';
 		}
     else if($_POST['newPass']!=$_POST['retypePass']){
-      echo 'New Password and retyped did not matched <a href="../../View/Admin/adminChangePassword.html">Go Back</a>';
+      echo 'New Password and retyped did not matched <a href="../../View/Applicant/applicantChangePassword.html">Go Back</a>';
     }
 
 		else{

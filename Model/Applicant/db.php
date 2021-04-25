@@ -1,6 +1,6 @@
 <?php
 
-	$dbname = "webtech_project";
+	$dbname = "webproject";
 	$dbuser = "root";
 	$dbpass = "";
 	$host	= "localhost";

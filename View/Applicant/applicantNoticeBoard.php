@@ -1,7 +1,7 @@
 <?php
     session_start();
-    $jsonFile= fopen("../../Model/Admin/notice.json","r");
-    $jsonRead= fread($jsonFile,filesize("../../Model/Admin/notice.json"));
+    $jsonFile= fopen("../../View/Admin/notice.php","r");
+    $jsonRead= fread($jsonFile,filesize("../../Controler/Admin/getNotice.php"));
     $adminNotice = json_decode($jsonRead, true);
     $notice = $adminNotice ['notice'];
 
