@@ -10,7 +10,7 @@
 </head>
 <body>
   <!-- ...............................Header Start....................... -->
-  <form action="" onsubmit="return deleteAccount()">
+  
     <fieldset>
       <table align="center">
         <tr>
@@ -39,32 +39,17 @@
             <legend><b><h3>Applicant Account Deactivation</h3></b></legend><br>
         
             <table align="center">
-
-
+              
               <tr>
-                <td>User name :</td>
-                <td><input type="text" id="uname" name="uname" >
-                  &nbsp;
-                  <span id="erruname" style="color:red"></span> <!--For JS error message-->
-                </td>
-            </tr>
-            <tr>
-                <td>Password :</td>
-                <td><input type="password" id="password" name="password" >
-                  &nbsp;
-                  <span id="errpassword" style="color:red"></span> <!--For JS error message-->
-                </td>
-            </tr>
-            <tr>
-              <td>Confirm Password :</td>
-              <td><input type="password" id="Cnpword" name="Cnpword" >
-                &nbsp;
-                <span id="errRnpword" style="color:red"></span> <!--For JS error message-->
-              </td>
-          </tr>
-            </table>
-            <hr><br>
-
+                <td>Current Password </td>
+                <td> :<input type="password" id="currentPass" name="currentPass" onkeyup="validation()"/> <br/></td> 
+              </tr>
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td id="matching" align="center"></td>
+              </tr>
+              </table>
+            <hr>
             <table align="center">
               <tr>
                 <td><input type="submit" name="submit" id="submit" value="Delete">
@@ -86,69 +71,23 @@
 </form>
   
 <script>
-  function get(id)
-  {
-      return document.getElementById(id);
-  }
-
-  function deleteAccount()
-  {
-      var uname = get("uname").value;
-       var password = get("password").value;
-       var Cnpword = get("Cnpword").value;     
-    
-      var validate = true;
+    function validation() {
+        var currentPass, msg;
       
+       
+        currentPass = document.getElementById("currentPass").value;
+        
+        if (currentPass.length < 8) {
+          msg = "Password looks Too short";
+        } 
+        else{
+          msg = "Good"   
+        }
+        
 
-      if(uname=="")
-      {
-          validate = false;
-         get("erruname").innerHTML="Please Enter User Name";
-          get("uname").focus();
+        document.getElementById("strnth").innerHTML = msg;
       }
-      else
-      {
-         get("erruname").innerHTML="";
-      }
-
-    
-      if(password=="")
-      {
-          validate = false;
-         get("errpassword").innerHTML="Please Enter  Password";
-          get("password").focus();
-      }
-      else
-      {
-         get("errpassword").innerHTML="";
-      }
-
-
-      if(Cnpword=="")
-      {
-          validate = false;
-         get("errRnpword").innerHTML="Please Enter Retype  Password";
-          get("Cnpword").focus();
-      }
-
-      else if(Cnpword!=password)
-      {
-          validate = false;
-         get("errRnpword").innerHTML="Please check new password";
-          get("Cnpword").focus();
-      }
-      else
-      {
-        get("errRnpword").innerHTML="";
-      }
-
-      return validate;
-
-  }
-
-
-</script>
-
+  </script>
 
 </body>
 </html>

@@ -45,7 +45,7 @@ if($_POST['update']){
                       'username' => $user_name,
     ];
 
-    $save =updateUser($user);
+    $save =applicantUpdateProfile($user);
     if($save){
       header('location: ../../View/Applicant/applicantProfile.php');
     }

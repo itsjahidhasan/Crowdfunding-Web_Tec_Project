@@ -38,7 +38,7 @@ if ( isset ( $_POST [ 'submit' ] ) ) {
                       'yearlyIncome'=> $yearlyIncome,
  
             ];
-            $data = insertApplicanData($applicantData);
+            $data = applicantRegistration($applicantData);
             if($data){
               header('location: ../../View/Applicant/applicantLogin.html');
             }

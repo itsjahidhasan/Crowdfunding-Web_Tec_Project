@@ -17,7 +17,7 @@
 	}
 
 
-  function getUserByUsername($userName){
+  function applicantProfileShow($userName){
 		$conn = getConnection();
 		$sql = "select * from applicantinfo where username='{$userName}'";
 		$result = mysqli_query($conn, $sql);
@@ -29,7 +29,7 @@
 
 
 
-	function updateUser($user){
+	function applicantUpdateProfile($user){
 		$conn = getConnection();
 		$sql = "update applicantinfo set name='{$user['name']}', email='{$user['email']}',occupation='{$user['occupation']}', gender='{$user['gender']}', dateOfBarth='{$user['dateOfBarth']}' where username='{$user['username']}'";
 		
@@ -39,7 +39,7 @@
 			return false;
 		}
 	}
-	function updatePassword($user){
+	function applicantChangePassword($user){
 		$conn = getConnection();
 		$sql = "update applicantinfo set password='{$user['password']}' where username='{$user['userName']}'";
 		
@@ -50,7 +50,31 @@
 		}
 	}
 
-	function insertApplicanData($user){
+	function applicantDeleteAccount($user){
+		$conn = getConnection();
+		$sql = "delete from applicantinfo  where username='{$user['userName']}'";
+		
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	function ApplicantGetDonationDetails(){
+		$conn = getConnection();
+		$sql = "select * from donationinfo";
+		$result = mysqli_query($conn, $sql);
+		$users = [];
+
+		while ($row = mysqli_fetch_assoc($result)) {
+			array_push($users, $row);
+		}
+
+		return $users;
+	}
+
+	function applicantRegistration($user){
 		$conn = getConnection();
 		$sql = "insert into applicantinfo values('', '{$user['name']}', '{$user['email']}', '{$user['password']}',  '{$user['dateOfBarth']}','{$user['userName']}', '{$user['occupation']}', '{$user['yearlyIncome']}', '{$user['gender']}')";
 		

@@ -3,7 +3,7 @@
     require_once('../../Model/Applicant/applicantModel.php');
     session_start();
     $userName = $_SESSION['userName'];
-    $user = getUserByUsername($userName);
+    $user = applicantProfileShow($userName);
 
 
 ?>

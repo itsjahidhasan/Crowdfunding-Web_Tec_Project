@@ -1,16 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>FundBD |Crowdfunding</title>
+  <title>FundBD | Donation Details</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
+  <script type="text/javascript" src="../JS/employee/ddetailsdata.js"></script>
+
+
+
+<!-- CSS properties -->
+<style>
+
+.ddetailsdatabtn{
+  background-color: rgb(255, 255, 255);
+  border-radius: 13%;
+  height: 48px;
+  width: 190px;
+}
+
+
+
+</style>
 </head>
 <body>
     <!-- .................................Header Start..................... --> 
-  <form action="" >
+ 
     <fieldset>
       <table align="center">
         <tr>
@@ -36,38 +53,27 @@
 
           <!-- .................................Main Content..................... -->
     <fieldset>
-  <form method="post" action="../../controller/Applicant/applicantDonationDetails.php" >
-    <fieldset>
-    
+      <fieldset>
         <legend><b><h3>Applicant Donation Details</h3></b></legend><br>
-    
-  
-        <table align="center">
-          <tr>
-            <td><a href>1.This is first Donation</a></td>
-          </tr>
-          <tr>
-            <td><a href>2.This is second Donation</a></td>
-          </tr>
-          <tr>
-            <td><a href>3.This is third Donation</a></td>
-          </tr>
-          <tr>
-            <td><a href>4.This is forth Donation</a></td>
-          </tr>
-
-        </table> 
+        <br>
+        <div align="center">
+        <input type="button" value="See Donation Details" class="ddetailsdatabtn" id="ddetailsdatabtn" name="ddetailsdata" onclick="ajax();">
+        </div>
+        
+        <br>
+        <br>
+        <div class="result" id="result" align="center"></div>
+      
+      <br><br>
     </fieldset>
-    </form>
-</fieldset>
+    
+    </fieldset>
     <!-- .................................Main Content..................... -->
-
     <!-- .................................Footer Start..................... -->
     <fieldset>
-      <p align="center">Copyright	&#169;2021</p>
+      <p align="center">copyright	&#169;2021</p>
     </fieldset>
-    <!-- .................................Footer Close..................... -->
-  </form>
 
+    <!-- .................................Footer Close..................... -->
 </body>
 </html>

@@ -24,7 +24,7 @@ require_once('../../Model/Applicant/applicantModel.php');
 
 		if($check === false)
 		{
-			echo 'Password must contain at least one of the special characters (@, #, $, %) <a href="../../View/Applicant/applicantChangePassword.html">Go Back</a>';
+			echo 'Password must contain at least one of the special characters (@, #, $, %) <a href="../../View/Applicant/applicantChangePassword.html">Back</a>';
 		}
     else if($_POST['newPass']!=$_POST['retypePass']){
       echo 'New Password and retyped did not matched <a href="../../View/Applicant/applicantChangePassword.html">Go Back</a>';
@@ -46,7 +46,7 @@ require_once('../../Model/Applicant/applicantModel.php');
           
             ];
            
-						$save =updatePassword($password);
+						$save =applicantChangePassword($password);
 						if($save){
 							$_SESSION['password']=$_POST['newPass'];
 							header('location: ../logout.php');
