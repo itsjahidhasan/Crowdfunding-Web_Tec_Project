@@ -4,6 +4,7 @@ require_once('../../Model/Applicant/applicantModel.php');
 if($_POST['update']){
   $name = $_POST['name'];
   $email = $_POST['email'];
+  $occupation = $_POST ['occupation'];
   $gender = $_POST['gender'];
   $emailCheck = "@gmail.com";
   $dateOfBirth = $_POST['date']."/".$_POST['month']."/".$_POST['year'];
@@ -17,6 +18,10 @@ if($_POST['update']){
   else if(strchr( $email,"@gmail.com")!="@gmail.com"){
     echo 'email formate should be: info@gmail.com <br><a href="../../View/Applicant/applicantUpdateProfile.html">try again</a>';
   }
+  else if(str_word_count($occupation)<1){
+    echo 'You have to give your occupation';
+    echo '<br><a href="../../View/Applicant/applicantUpdateProfile.html">try again</a>';
+  }
   else if((int)$_POST['date']>31 ){
     echo 'You have given a invalid date <a href="../../View/Applicant/applicantUpdateProfile.html">try again</a>';
   }
@@ -29,16 +34,17 @@ if($_POST['update']){
  
   else{
     session_start();
+    $user_name = $_SESSION['userName'];
     $user=[
                       'name'=>$name, 
                        
                       'email'=> $email,
-                      
+                      'occupation'=> $occupation,
                       'gender'=> $gender,
                       'dateOfBarth'=> $dateOfBirth,
-                      'username' => $_SESSION['userName'],
+                      'username' => $user_name,
     ];
-    //Admin database goes here
+
     $save =updateUser($user);
     if($save){
       header('location: ../../View/Applicant/applicantProfile.php');

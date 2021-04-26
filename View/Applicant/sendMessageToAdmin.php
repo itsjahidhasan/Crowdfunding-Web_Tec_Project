@@ -93,7 +93,7 @@ if($_POST['submit']){
               <tr>
                 <td>
                     <input type="submit" name="submit" id="submit" value="SEND">
-                  
+                    <input type="reset" name="reset" id="reset" value="Clear">
                 </td>
               </tr>
     

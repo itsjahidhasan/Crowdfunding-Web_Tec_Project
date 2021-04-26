@@ -47,57 +47,46 @@
 
     <!-- .................................Main Content..................... -->
     <fieldset>
-      <table align="center" width="1000">
+      <table align="center" width="800">
         <tr>
-          <td>
-            <h3>Applicant Account</h3>
-            <hr>
-            <ul>
-              <li><a href="./aplicantDashBoard.html">Dashboard</a></li>
-              <li><a href="./applicantProfile.php">View Profile</a></li>
-              <li><a href="./applicantUpdateProfile.html">Edit Profile</a></li>
-              <li><a href="./applicantChangePic.html">Change Profile Picture</a></li>
-              <li><a href="./applicantChangePassword.html">Change Password</a></li>
-              <li><a href="./applicantCauseForDonation.html">Donation Reason</a></li>
-              <li><a href="./applicantDonationDetails.html">Donation Details</a></li>
-              <li><a href="./applicantDonationGoal.html">Set Donation Goal</a></li>
-              <li><a href="./applicantEditPost.html">Edit Post</a></li>
-              <li><a href="./applicantGoalCompleteNotice.html">Goal Complete Notice</a></li>
-              <li><a href="./applicantNoticeBoard.php">Notice Board</a></li>
-              <li><a href="./applicantWithdrawMoney.html">Withdraw Money</a></li>
-              <li><a href="./sendMessageToAdmin.php">Massage To Admin</a></li>
-          </ul>
-          </td>
+
           <td>
             <fieldset>
-              <legend>Profile</legend>
+              <legend><b>Applicant Profile</b></legend>
               <img src="../../assets/user.png" alt="" width="100" height="100"><br>
               <a href="./applicantChangePic.html">Change</a>
               <table>
                 <tr>
                   <td>Name &nbsp;&nbsp;</td>
-                  <td>:<?php echo $user[0]['name'];?></td>
+                  <td>: &nbsp; <?php echo $user[0]['name'];?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Email &nbsp;&nbsp;</td>
-                  <td>:<?php echo $user[0]['email'];?></td>
+                  <td>:  &nbsp;<?php echo $user[0]['email'];?></td>
+                </tr>
+              </table>
+              <hr>
+              <table>
+                <tr>
+                  <td>Occupation &nbsp;&nbsp;</td>
+                  <td>:  &nbsp;<?php echo $user[0]['occupation'];?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Gender &nbsp;&nbsp;</td>
-                  <td>:<?php echo $user[0]['gender'];?></td>
+                  <td>:  &nbsp;<?php echo $user[0]['gender'];?></td>
                 </tr>
               </table>
               <hr>
               <table>
                 <tr>
                   <td>Date of Birth &nbsp;&nbsp;</td>
-                  <td>:<?php echo $user[0]['dateOfBarth'];?></td>
+                  <td>:  &nbsp;<?php echo $user[0]['dateOfBarth'];?></td>
                 </tr>
               </table>
               <hr>
