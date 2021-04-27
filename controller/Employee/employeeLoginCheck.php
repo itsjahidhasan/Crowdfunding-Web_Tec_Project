@@ -1,6 +1,8 @@
 <?php
+	require_once('../../Model/Employee/employeeModel.php');
 	if(isset($_POST['submit']))
 	{
+		
 		if(strlen($_POST["username"])<2)
 		{
 			echo 'User Name must contain at least two (2) characters <a href="../../View/Employee/employeeLogin.html">Go Back</a>';
@@ -31,29 +33,30 @@
 		else{
       $userName =  $_POST [ 'username' ];
 	    $password =   $_POST [ 'password' ];
-			$jsonFile= fopen("../../Model/Employee/employeeData.json","r");
-		  $jsonRead= fread($jsonFile,filesize("../../Model/Employee/employeeData.json"));
+			$flag = employeeLogin($userName, $password);
+			
+			
 
-      $userValue = json_decode($jsonRead, true);
-
-      if ( $password == $userValue ['password'] && $userName == $userValue ['userName'] ) {
+      if ( $flag = true ) {
 				if(isset($_POST['rememberMe'])){
 					setcookie('userName',$userName, time()+60*60*24*7);
 				}
 					
 				
+				
+				
 				session_start();
-				$_SESSION['usernmae'] = $userName;
-				$_SESSION['password']=$password;
+				$_SESSION['userName'] = $userName;
+				$_SESSION['password'] = $password;
 				
 				
 				
-        header('location: ../../View/Employee/employeeDashboard.html');
+        header('location: ../../View/Employee/employeeDashBoard.html');
       }
       else{
         echo "Password or Username didn't match click here to".'<a href="../../View/Employee/employeeLogin.html"> try again</a>';
       }
-      fclose($jsonFile);
+      
 		}
   }
 	} 

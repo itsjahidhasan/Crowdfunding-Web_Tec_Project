@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- .................................Header Start..................... --> 
-  <form action="" >
+  <form action="" onsubmit="return v2()">
     <fieldset>
       <table align="center">
         <tr>
@@ -40,11 +40,14 @@
     <fieldset>
     
         <legend><b>Employee Notice Upload</b></legend><br>
-    
+      
   
         <table align="center">
           <td>Write Notice :</td>
-                <td><input type="text" id="notice" name="notice" ></td>
+                <td><input type="text" id="notice" name="notice" >
+                   &nbsp;
+                  <span id="errnotice" style="color:red"></span>
+                </td>
         </table> 
         <hr><br>
         <table align="center">
@@ -67,5 +70,38 @@
     <!-- .................................Footer Close..................... -->
   </form>
 
+  <script>
+
+    function get(id)
+      {
+          return document.getElementById(id);
+      }
+      function v2()
+      {
+          var notice = get("notice").value;
+          
+      
+        
+          var validate = true;
+          if(notice=="")
+          {
+              validate = false;
+             get("errnotice").innerHTML="Please Write The Notice";
+              get("notice").focus();
+          }
+          else
+          {
+              get("errnotice").innerHTML="";
+          }
+    
+        
+    
+    
+          return validate;
+    
+      }
+    
+    
+    </script>
 </body>
 </html>

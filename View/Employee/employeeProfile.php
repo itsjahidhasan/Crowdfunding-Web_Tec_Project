@@ -1,12 +1,10 @@
 <?php
+    
+    require_once('../../Model/Employee/employeeModel.php');
     session_start();
-    $jsonFile= fopen("../../Model/Employee/employeeData.json","r");
-    $jsonRead= fread($jsonFile,filesize("../../Model/Employee/employeeData.json"));
-    $userValue = json_decode($jsonRead, true);
-    $name = $userValue ['name'];
-		$email = $userValue ['email'];
-		$gender = $userValue ['gender'];
-    $dob = $userValue ['dateOfBarth'];
+    $userName = $_SESSION['userName'];
+    $user = getUserByUsername($userName);
+
 
 ?>
 
@@ -80,32 +78,31 @@
             <table>
               <tr>
                 <td>Name &nbsp;&nbsp;</td>
-                <td>:<?php echo $name?></td>
+                <td>:<?php echo $user[0]['name'];?></td>
               </tr>
             </table>
             <hr>
             <table>
               <tr>
                 <td>Email &nbsp;&nbsp;</td>
-                <td>:<?php echo $email?></td>
+                <td>:<?php echo $user[0]['email'];?></td>
               </tr>
             </table>
             <hr>
             <table>
               <tr>
                 <td>Gender &nbsp;&nbsp;</td>
-                <td>:<?php echo $gender?></td>
+                <td>:<?php echo $user[0]['gender'];?></td>
               </tr>
             </table>
             <hr>
             <table>
               <tr>
                 <td>Date of Birth &nbsp;&nbsp;</td>
-                <td>:<?php echo $dob?></td>
+                <td>:<?php echo $user[0]['dateOfBarth'];?></td>
               </tr>
             </table>
             <hr>
-            <a href="./applicantUpdateProfile.html">Edit Profile</a><br><br>
           </fieldset>
         </td>
       </tr>
@@ -120,7 +117,3 @@
   <!-- .................................Footer Close..................... -->
 </body>
 </html>
-
-<?php
-   fclose($jsonFile);
-?>

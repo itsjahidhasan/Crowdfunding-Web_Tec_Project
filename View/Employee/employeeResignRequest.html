@@ -10,7 +10,7 @@
 </head>
 <body>
   <!-- ...............................Header Start....................... -->
-  <form action="" >
+  <form action="" onsubmit="return v2()">
     <fieldset>
       <table align="center">
         <tr>
@@ -37,15 +37,28 @@
         <fieldset>
           <legend><b>Employee Resign</b></legend>
           
+               
             <table align="center">
               <tr>
-                  <td>Cause For Resign:<input type="text" name="cresign"></td>
+                  <td>Cause For Resign:</td>
+                 <td><input type="text" id="cresign" name="cresign" >
+                    &nbsp;
+                    <span id="errcresign" style="color:red"></span>
+                  </td>
               </tr>
               <tr>
-                <td>Application:<input type="text" name="application"></td>
+                <td>Application:</td>
+                <td><input type="text" id="application" name="application" >
+                  &nbsp;
+                  <span id="errapplication" style="color:red"></span>
+                </td>
             </tr>
             <tr>
-              <td>Email:<input type="text" name="email"></td>
+              <td>Email:</td>
+              <td><input type="text" id="email" name="email" >
+                &nbsp;
+                <span id="erremail" style="color:red"></span>
+              </td>
           </tr>
               
             </table>	
@@ -76,6 +89,64 @@
     </fieldset>
   </form>
   <!-- .................................Footer Close..................... -->
+  <script>
+    function get(id)
+    {
+        return document.getElementById(id);
+    }
+    function v2()
+    {
+        var cresign = get("cresign").value;
+        var application = get("application").value;
+        var email = get("email").value;
+        
+    
+      
+        var validate = true;
+        
+  
+        if(cresign=="")
+        {
+            validate = false;
+           get("errcresign").innerHTML="Please Write Your Resign Cause";
+            get("cresign").focus();
+        }
+        else
+        {
+            get("errcresign").innerHTML="";
+        }
+  
+  
+        if(application=="")
+        {
+            validate = false;
+           get("errapplication").innerHTML="Please Write Your Application";
+            get("application").focus();
+        }
+        else
+        {
+            get("errapplication").innerHTML="";
+        }
 
+        
+        if(email=="")
+        {
+            validate = false;
+           get("erremail").innerHTML="Please Write Your Email";
+            get("email").focus();
+        }
+        else
+        {
+            get("erremail").innerHTML="";
+        }
+  
+  
+  
+        return validate;
+  
+    }
+  
+  
+  </script>
 </body>
 </html>
