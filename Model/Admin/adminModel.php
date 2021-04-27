@@ -90,6 +90,17 @@
 
 		return $users;
 	}
+	function delEmpinfo($id){
+		$conn = getConnection();
+		$sql = "delete from employeeinfo  where Userid='{$id}'";
+		
+
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
   function getAppinfo(){
 		$conn = getConnection();
 		$sql = "select * from applicantinfo";
@@ -101,6 +112,17 @@
 		}
 
 		return $users;
+	}
+	function delAppinfo($id){
+		$conn = getConnection();
+		$sql = "delete from applicantinfo  where id='{$id}'";
+		
+
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
 	}
   function getDoninfo(){
 		$conn = getConnection();
@@ -114,6 +136,45 @@
 
 		return $users;
 	}
+	function delDoninfo($id){
+		$conn = getConnection();
+		$sql = "delete from donnerinfo  where id='{$id}'";
+		
+
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+
+	function giveDonation($user){
+		$conn = getConnection();
+		$sql = "insert into donationinfo values('', '{$user['dname']}', '{$user['demail']}', '{$user['aname']}', '{$user['damount']}')";
+		
+		if(mysqli_query($conn, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function donationDetails(){
+		$conn = getConnection();
+		$sql = "select * from donationinfo";
+		$result = mysqli_query($conn, $sql);
+		$users = [];
+
+		while ($row = mysqli_fetch_assoc($result)) {
+			array_push($users, $row);
+		}
+
+		return $users;
+	}
+
+
+	
 
 
 

@@ -37,13 +37,18 @@
 
     <!-- .................................Main Content..................... -->
     <fieldset>
-      <form action="" method="post">
+      <form action="../../controller/Admin/donateMoney.php" method="post">
         <fieldset>
           <legend>Donate to Applicant</legend>
           
           <table align="center">
             <tr>
-              <td>
+              <td>Applicant Name</td>
+              <td>:<input type="text" name="name" id=""></td>
+            </tr>
+            <tr>
+              <td>Amount</td>
+              <td>:
                 <input type="radio" name="amountDonate"value="1000" checked >
                 <label class="1000">1000</label>
                 <input type="radio" name="amountDonate" value="10000">

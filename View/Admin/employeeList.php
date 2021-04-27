@@ -75,6 +75,9 @@
         <tr>
           <td><a href="./updateEmployeeList.html">Update Employee List</a></td>
         </tr>
+        <tr>
+          <td><a href="./delEmp.html">Delete Employee List</a></td>
+        </tr>
       </table>
       
     </fieldset>

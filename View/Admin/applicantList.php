@@ -74,6 +74,11 @@
       <table align="center">
         <tr>
           <td><a href="./updateApplicantList.html">Update Applicant List</a></td>
+
+        </tr>
+        <tr>
+          <td><a href="./delApp.html">Delete Applicant List</a></td>
+          
         </tr>
       </table>
     </fieldset>

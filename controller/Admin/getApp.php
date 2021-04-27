@@ -17,7 +17,8 @@
                       <td>{$users[$i]['name']}</td>
                       <td>{$users[$i]['email']}</td>
                       <td>{$users[$i]['userName']}</td>
-                      <td>{$users[$i]['dateOfBarth']}</td>  
+                      <td>{$users[$i]['dateOfBarth']}</td> 
+                      
                    </tr>";
 	}
 

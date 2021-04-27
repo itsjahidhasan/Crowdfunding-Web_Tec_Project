@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FundBD | Transactions Details</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
+  <script type="text/javascript" src="../JS/admin/donation.js"></script>
 </head>
 <body>
   <!-- ...............................Header Start....................... -->
@@ -38,55 +39,18 @@
     <!-- .................................Main Content..................... -->
     <fieldset>
       <fieldset>
-        <legend>Transactions Details</legend>
-        <table border="1" width="800" align="center">
-          <tr>
-            <th>User Type</th>
-            <th>User Name</th>
-            <th>User Email</th>
-            <th>Amount</th>
-            <th>Transaction Type</th>
-            <th>Date</th>
-            <th>Time</th>
-          </tr>
-          <tr>
-            <td align="center">Applicant</td>
-            <td align="center">rohim56</td>
-            <td align="center">rohim@gmail.com</td>
-            <td align="center">10000</td>
-            <td align="center">Withdraw</td>
-            <td align="center">03/02/2021</td>
-            <td align="center">3.00 PM</td>
-          </tr>
-          <tr>
-            <td align="center">Doner</td>
-            <td align="center">korim56</td>
-            <td align="center">korim@gmail.com</td>
-            <td align="center">50000</td>
-            <td align="center">Donate</td>
-            <td align="center">09/02/2021</td>
-            <td align="center">1.00 PM</td>
-          </tr>
-          <tr>
-            <td align="center">Employee</td>
-            <td align="center">juti56</td>
-            <td align="center">juti@gmail.com</td>
-            <td align="center">15000</td>
-            <td align="center">Withdraw</td>
-            <td align="center">03/03/2021</td>
-            <td align="center">10.00 AM</td>
-          </tr>
-          <tr>
-            <td align="center">Applicant</td>
-            <td align="center">Forid90</td>
-            <td align="center">Forid@gmail.com</td>
-            <td align="center">100000</td>
-            <td align="center">Withdraw</td>
-            <td align="center">03/02/2021</td>
-            <td align="center">12.00 PM</td>
-          </tr>
-        </table>
-      </fieldset>
+        <legend>Donation Details</legend>
+        <div align="center">
+        <input type="button" value="See"  name="donationDetails" class="donDatabtn" onclick="ajax(); toggle();">
+        </div>
+        
+        <br>
+        <br>
+        <div class="result" id="result" align="center"></div>
+      <br><br>
+      
+    </fieldset>
+    
     </fieldset>
     <!-- .................................Main Content..................... -->
     <!-- .................................Footer Start..................... -->
