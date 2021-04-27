@@ -1,7 +1,7 @@
 <?php
 
 require_once('../../Model/Applicant/applicantModel.php');
-	if(isset($_POST['Submit']))
+	if(isset($_POST['submit']))
 	{
 		
 	

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FundBD | Donation Details</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
-  <script type="text/javascript" src="../JS/employee/ddetailsdata.js"></script>
+  <script type="text/javascript" src="../JS/applicant/ddetailsdata.js"></script>
 
 
 
@@ -63,8 +63,8 @@
         <br>
         <br>
         <div class="result" id="result" align="center"></div>
+        <br><br>
       
-      <br><br>
     </fieldset>
     
     </fieldset>

@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>FundBD |Crowdfunding</title>
+  <title>FundBD | Applicant Login</title>
   <link rel="shortcut icon" href="../../assets/icon.png">
 </head>
 <body>
   <!-- ...............................Header Start....................... -->
   
+  
     <fieldset>
       <table align="center">
         <tr>
           <td>
-            <img src="../../assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">          </td>
+            <img src="../../assets/imgpsh_fullsize.png" alt="" srcset=""width="200" height="80">
+          </td>
           
         </tr>
       </table>
@@ -31,49 +32,113 @@
       </table>
     </fieldset>
     <!-- .................................Header Close..................... -->
+
+
+    
+
     <!-- .................................Main Content..................... -->
     <fieldset>
-    <form method="post" action="../../controller/Applicant/applicantLoginCheck.php"> 
-      <fieldset>
-        <legend><b><h3>Login as Applicant</h3></b></legend>
-        
-          <table align="center">
-            <tr>
-                <td>User Name </td>
-                <td>:<input type="text" name="username"></td>
-            </tr>
-            <tr>
-                <td>Password </td>
-                <td>:<input type="password" name="password"></td>
-            </tr>
-          </table>	
-            <hr>
+      <form method="post" action="../../controller/Applicant/applicantLoginCheck.php"> 
+        <fieldset>
+          <legend>Applicant Login</legend>
+          
+            <table align="center">
+              <tr>
+                  <td>User Name</td>
+                  <td>:<input type="text" name="username" id="userName" onkeyup="uNameValidation()"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td id="userNameErorr">
 
+                </td>
+              </tr>
+              <tr>
+                  <td>Password </td>
+                  <td>:<input type="password" name="password" id="password" onkeyup="passValidation()"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td id="passwordErorr">
+
+                </td>
+              </tr>
+            </table>	
+              <hr>
             <table align="center">
               <tr>
                 <td><input type="checkbox" name="rememberMe" id="">Remember Me</td>
               </tr>
               <tr>
                 <td>
-                  <input type="submit" name="submit" value="Submit">&nbsp;&nbsp;&nbsp;&nbsp;
-                  <input type="reset" name="reset" id="reset" value="Clear">
-                  <a href="./applicantForgetPassword.html">Forgot Password??</a>
-                </td>      
+                  <input type="submit" name="submit" value="Submit">
+                  <a href="./adminForgatePass.html"> Forget password?</a>
+                </td>
+                
               </tr>
             
-              </table> 
-               
-      </fieldset>
-    </form>
-  </fieldset>
-  
+                
+            </table>  
+              
+            
+        </fieldset>
+      </form>
+    </fieldset>  
     <!-- .................................Main Content..................... -->
     <!-- .................................Footer Start..................... -->
     <fieldset>
-      <p align="center">Copyright	&#169;2021</p>
+      <p align="center">copyright	&#169;2021</p>
     </fieldset>
  
-  <!-- .................................Footer Close..................... -->
+    <!-- .................................Footer Close..................... -->
 
+
+    <!-- js code goes here -->
+    <script>
+      function uNameValidation() {
+        var username, msg;
+      
+       
+        username = document.getElementById("userName").value;
+        
+        
+        if (username=="") {
+          msg = "Empty field is not appected";
+        } 
+        else{
+          if (username.length<2 ) {
+            msg = "Need at least 2 characters"
+          } else {
+            msg = ""
+          }   
+        }
+        
+
+        document.getElementById("userNameErorr").innerHTML = msg;
+      }
+      function passValidation() {
+        var password, msg;
+      
+       
+        password = document.getElementById("password").value;
+        
+        
+        if (password=="") {
+          msg = "Empty field is not appected";
+        } 
+        else{
+          if (password.length<8 ) {
+            msg = "Need at least 8 characters"
+          } else {
+            msg = ""
+          }   
+        }
+        
+
+        document.getElementById("passwordErorr").innerHTML = msg;
+      }
+      
+      
+      </script>
 </body>
 </html>
