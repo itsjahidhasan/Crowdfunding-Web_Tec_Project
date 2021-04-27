@@ -80,7 +80,7 @@
 
   function getEmployeeifo(){
 		$conn = getConnection();
-		$sql = "select * from emplyinfo";
+		$sql = "select * from employeeinfo";
 		$result = mysqli_query($conn, $sql);
 		$users = [];
 
@@ -92,7 +92,7 @@
 	}
   function getAppinfo(){
 		$conn = getConnection();
-		$sql = "select * from appinfo";
+		$sql = "select * from applicantinfo";
 		$result = mysqli_query($conn, $sql);
 		$users = [];
 
@@ -104,7 +104,7 @@
 	}
   function getDoninfo(){
 		$conn = getConnection();
-		$sql = "select * from doninfo";
+		$sql = "select * from donnerinfo";
 		$result = mysqli_query($conn, $sql);
 		$users = [];
 

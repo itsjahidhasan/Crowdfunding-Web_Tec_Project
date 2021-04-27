@@ -13,12 +13,12 @@
 
           for($i=0; $i < count($users); $i++) {
 		      $data .= "<tr>
-                      <td>{$users[$i]['id']}</td>
+                      <td>{$users[$i]['User id']}</td>
                       <td>{$users[$i]['name']}</td>
                       <td>{$users[$i]['email']}</td>
-                      <td>{$users[$i]['username']}</td>
-                      <td>{$users[$i]['salary']}</td>
-                      <td>{$users[$i]['dateOfBirth']}</td>  
+                      <td>{$users[$i]['userName']}</td>
+                      <td>{$users[$i]['gender']}</td>
+                      <td>{$users[$i]['dateOfBarth']}</td>  
                    </tr>";
 	}
 
