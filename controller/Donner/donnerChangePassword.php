@@ -1,5 +1,6 @@
 <?php
-	if(isset($_POST['Submit']))
+require_once('../../Model/Donner/donnerModel.php');
+	if(isset($_POST['submit']))
 	{
 		if(strlen($_POST['newPass'])<8)
 		{
@@ -30,39 +31,37 @@
 		else{
       
 	    session_start();
-			$jsonFile= fopen("../../Model/Donner/donnerData.json","r");
-		  $jsonRead= fread($jsonFile,filesize("../../Model/Donner/donnerData.json"));
+		//	$jsonFile= fopen("../../Model/Donner/donnerData.json","r");
+		//  $jsonRead= fread($jsonFile,filesize("../../Model/Donner/donnerData.json"));
 
-      $userValue = json_decode($jsonRead, true);
+    //  $userValue = json_decode($jsonRead, true);
 
       if ( $_SESSION['password'] == $_POST['currentPass'] ) {
 				
-        $donnerData=[
-          'name'=>$userValue ['name'], 
-          'userName'=>$userValue ['userName'], 
-          'email'=> $userValue ['email'],
-          'password'=>$_POST['retypePass'], 
-          'gender'=> $userValue ['gender'],
-          'dateOfBarth'=> $userValue ['dateOfBarth'],
-            ];
-            $donnerDataJson= json_encode( $donnerData );
-            $jsonFile1= fopen( "../../Model/Donner/donnerData.json", "w" );
-            fwrite($jsonFile1 , $donnerDataJson);
-            fclose($jsonFile1);
-				
-				
+        $password=[
+           
+			'userName'=>$_SESSION['userName'], 
 			
-				$_SESSION['password']=$_POST['newPass'];
-				
-				
-				
-        header('location: ../logout.php');
-      }
-      else{
-        echo "Incorrect current password".'<a href="../../View/Donner/donnerChangePassword.html"> try again</a>';
-      }
-      fclose($jsonFile);
+			'password'=>$_POST['retypePass'], 
+			
+			
+		];
+		$save =updatePassword($password);
+		if($save){
+			$_SESSION['password']=$_POST['newPass'];
+			header('location: ../logout.php');
 		}
-  }
-	} 
+		else{
+			echo "Error .....password didn't update";
+		}				
+
+
+}
+else{
+echo "Incorrect current password".'<a href="../../View/Donner/donnerChangePassword.php"> Reload </a>';
+}
+
+}
+}
+} 
 ?>

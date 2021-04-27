@@ -1,9 +1,7 @@
 <?php
-    session_start();
-    $jsonFile= fopen("../../Model/Admin/notice.json","r");
-    $jsonRead= fread($jsonFile,filesize("../../Model/Admin/notice.json"));
-    $adminNotice = json_decode($jsonRead, true);
-    $notice = $adminNotice ['notice'];
+
+require_once('../../Model/Admin/adminModel.php');
+$users =   getAllAdminNotice();
 
 ?>
 
@@ -22,7 +20,7 @@
 <body>
   <!-- ...............................Header Start....................... -->
   
-    <fieldset>
+  <fieldset>
       <table align="center">
         <tr>
           <td>
@@ -56,16 +54,36 @@
 
           <!-- .................................Main Content..................... -->
     <fieldset>
-  <form method="post" action="../../controller/Donner/donnerNoticeBoard.php" >
+  <form method="post" action="" >
     <fieldset>
     
-        <legend><b>Donner Notice Board</b></legend><br>
+        <legend><b><h3>Donner Notice Board</h3></b></legend><br>
     
   
-        <table align="center">
-          <tr>
-            <td><h3><?php echo $notice ?></h3></td>
-          </tr>
+            <?php 
+            $data = '<table >
+            <tr>
+                
+                <th align="center">User Name</th>
+                <th align="center">Notice</th>
+                
+            </tr>';
+  
+            for($i=0; $i < count($users); $i++) {
+            $data .= "<tr>
+                        
+                        <td>{$users[$i]['username']}</td>
+                        <td>{$users[$i]['notice']}</td>
+                        
+                     </tr>";
+    }
+  
+  
+    $data .= "</table>";
+            
+    echo $data;
+            
+            ?>
           
 
         </table> 

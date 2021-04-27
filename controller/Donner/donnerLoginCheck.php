@@ -1,4 +1,5 @@
 <?php
+require_once('../../Model/Donner/donnerModel.php');
 	if(isset($_POST['submit']))
 	{
 		if(strlen($_POST["username"])<2)
@@ -29,14 +30,13 @@
 		}
 
 		else{
-      $userName =  $_POST [ 'username' ];
+        $userName =  $_POST [ 'username' ];
 	    $password =   $_POST [ 'password' ];
-			$jsonFile= fopen("../../Model/Donner/donnerData.json","r");
-		  $jsonRead= fread($jsonFile,filesize("../../Model/Donner/donnerData.json"));
+			$sign =donnerLogin($userName,$password);
 
-      $userValue = json_decode($jsonRead, true);
+      
 
-      if ( $password == $userValue ['password'] && $userName == $userValue ['userName'] ) {
+      if ($sign=true ) {
 				if(isset($_POST['rememberMe'])){
 					setcookie('userName',$userName, time()+60*60*24*7);
 				}
@@ -51,9 +51,9 @@
         header('location: ../../View/Donner/donnerDashboard.html');
       }
       else{
-        echo "Password or Username didn't match click here to".'<a href="../../View/Donner/donnerLogin.html"> try again</a>';
+        echo "Password or Username didn't match click here to try again".'<a href="../../View/Donner/donnerLogin.html"> Reload </a>';
       }
-      fclose($jsonFile);
+      
 		}
     }
 	} 
